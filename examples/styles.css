@@ -1,0 +1,196 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: 'Roboto Condensed',arial,helvetica,sans-serif;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+   background-color: #129793;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+.header {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 15px;
+    color: #505050;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color: #ff7260;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.header a {
+    color: #ff7260;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+.header a:hover {
+    color: #505050;
+}
+
+.header p {
+    margin: 6px 0;
+    padding: 0;
+    font-size: 15px;
+    color: #505050;
+}
+
+.header p.header_buttons{
+   margin-top: 15px;
+}
+
+.header p.header_buttons a{
+   background-color: #ff7260;
+   color: #fff;
+   display: inline-block;
+   text-align: center;
+   padding: 10px 30px;
+   margin: 0 10px;
+   text-decoration: none;
+   text-transform: uppercase;
+}
+p.header_buttons a:hover{
+   background-color: #9bd7d5;
+}
+
+
+
+.content{
+   width: 940px;
+   display: block;
+   margin: 0 auto;
+}
+
+.content h2{
+   font-size: 40px;
+   font-weight: bold;
+   color: #fff;
+   margin-bottom: 30px;
+   margin-top: 30px;
+}
+
+.content h3{
+   font-size: 35px;
+   font-weight: 300;
+   color: #fff;
+   margin-bottom: 15px;
+   margin-top: 25px;
+}
+
+.content code{
+   width: 100%;
+   background-color: #f0f0f0;
+   display: block;
+   padding: 20px;
+   color: #000;
+   letter-spacing: 0.5px;
+   font-size: 16px;
+   font-weight: normal;
+   margin: 15px 0 30px 0;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+
+.content p{
+   color: #fff;
+   font-size: 17px;
+   margin: 15px 0;
+}
+
+.content strong{
+   font-weight: bold;
+   font-size: 17px;
+   color: #fff5c3;
+}
+
+.content table{
+   background-color: #fff;
+   width: 100%;
+}
+
+.content table thead tr th{
+   border: 1px solid #505050;
+   padding: 8px;
+   font-size: 17px;
+   color: #ff7260;
+   font-weight: bold;
+}
+table tbody tr td{
+   border: 1px solid #505050;
+   padding: 8px;
+   font-size: 17px;
+   color: #505050;
+   font-weight: 300;
+}
+
+
+.footer{
+   display: block;
+   padding: 30px 0 15px 0;
+   text-align: center;
+   color: #fff;
+   font-size: 15px;
+}
+.footer a{
+   color: #fff;
+   text-decoration: underline;
+   font-size: 15px;
+}
+.footer a:hover{
+   text-decoration: none;
+}
