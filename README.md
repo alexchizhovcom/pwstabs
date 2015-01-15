@@ -64,7 +64,7 @@ Just place plugins files into <strong>&lt;head&gt;</strong> section. <strong>Plu
 
 
 
-### Options
+## Options
 
 <table>
 <thead>
