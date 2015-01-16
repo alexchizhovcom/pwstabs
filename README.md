@@ -96,3 +96,9 @@ Just place plugins files into <strong>&lt;head&gt;</strong> section. <strong>Plu
 </tr>
 </tbody>
 </table>
+
+
+## Changelog
+
+### Version 1.1.1
+1) Bug fix: added class selector to tabs controller ul element. Solved issue with ul elements in tabs content.
