@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.0
-  * Version from: 15.01.2015
+  * Version: 1.1.1
+  * Version from: 16.01.2015
   * Licensed under the MIT license
   */
 ;(function ($, window, document, undefined) {
@@ -12,11 +12,10 @@
 
    var pluginName = "pwstabs",
     defaults = {
-      effect: 'scale',   // You can change effects of your tabs container: scale, slideleft, slideright, slidetop, slidedown
-      defaultTab: 1,    // The tab we want to be opened by default
-      containerWidth: '100%' // Set custom container width if not set then 100% is used
+      effect: 'scale',        // You can change effects of your tabs container: scale, slideleft, slideright, slidetop, slidedown
+      defaultTab: 1,          // The tab we want to be opened by default
+      containerWidth: '100%'  // Set custom container width if not set then 100% is used
     };
-
 
 
 
@@ -63,7 +62,7 @@
 
 
          // Add UL / LI and A control elements to Tabs Container
-         this.$elem.parent().prepend('<ul></ul>');
+         this.$elem.parent().prepend('<ul class="pws_tabs_controll"></ul>');
 
 
          var pwsTabsDataCounter = '1';
@@ -73,7 +72,7 @@
             $(this).attr('data-pws-tab-id', pwsTabsDataCounter);
 
             // Add LIs and A controls
-            $(this).parent().parent().find('ul').append('<li><a href="#" data-tab-id="' + $(this).data('pws-tab') + '">' + $(this).data('pws-tab-name') + '</a></li>');
+            $(this).parent().parent().find('ul.pws_tabs_controll').append('<li><a href="#" data-tab-id="' + $(this).data('pws-tab') + '">' + $(this).data('pws-tab-name') + '</a></li>');
 
             // Adding class to our selector children (Tabs)
             $(this).addClass('pws_tab_single');
@@ -106,10 +105,6 @@
 
 
 
-
-         
-
-
          // First lets find A link and add click function
          this.$elem.parent().find('ul li a').on('click', {pwsOptions : this.settings}, function (e) {
 
@@ -117,8 +112,6 @@
 
             var $settings = e.data.pwsOptions;
             var effect = $settings.effect;
-
-
 
 
             $(this).parent().parent().find('a').removeClass('pws_tab_active');   // Remove active class from all A links
@@ -130,7 +123,6 @@
             var allTabs = $(this).parent().parent().parent().find('[data-pws-tab]');
 
             var getTabsContainer = $(this).parent().parent().parent().find('.pws_tabs_list');
-
 
 
             // Now lets make it cooler, and add some effects to tabs container
@@ -157,22 +149,7 @@
             // Set main container height to the height of current tab
             currentTab.parent().height(parseInt(currentTab.height()));
 
-
          });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       } // Init function END
 
