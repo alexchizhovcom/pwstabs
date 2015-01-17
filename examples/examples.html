@@ -4,7 +4,7 @@
    <title>PWS Tabs</title>
    <link type="text/css" rel="stylesheet" href="../assets/jquery.pwstabs.css">
    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-   <script src="../assets/jquery.pwstabs-1.1.1.js"></script>
+   <script src="../assets/jquery.pwstabs-1.1.2.js"></script>
 
    <link type="text/css" rel="stylesheet" href="styles.css">
    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
@@ -37,6 +37,18 @@
             defaultTab: 1,
             containerWidth: '600px'
          });
+         $('.tabset6').pwstabs({
+            effect: 'slidedown',
+            defaultTab: 2,
+            containerWidth: '600px',
+            rtl: true
+         });
+         $('.tabset7').pwstabs({
+            effect: 'slidedown',
+            defaultTab: 2,
+            containerWidth: '600px',
+            horizontalPosition: 'bottom'
+         });
       });
    </script>
 </head>
@@ -60,14 +72,25 @@
       <pre><code>$('.tabset0').pwstabs();</code></pre>
 
       <div class="tabset0">
-         <div data-pws-tab="tab1" data-pws-tab-name="Tab 1">
-            Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.
+         <div data-pws-tab="tab1" data-pws-tab-name="YouTube and Vimeo">
+            <!--Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.-->
+            <span style="margin-right: 16px;"><iframe width="440" height="247" src="https://www.youtube.com/embed/7u2aX7mG2NU?rel=0" frameborder="0" allowfullscreen></iframe></span>
+            <span><iframe src="https://player.vimeo.com/video/94502406?title=0&amp;byline=0&amp;portrait=0" width="440" height="247" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></span>
          </div>
-         <div data-pws-tab="tab2" data-pws-tab-name="Tab 2">
-            Donec pellentesque placerat mi, at rutrum metus tempor posuere. Nunc ut pellentesque purus. Nam auctor, magna eget elementum maximus, ligula augue ornare massa, id varius magna mi vel diam. Cras vel pharetra risus. Suspendisse eu varius nisl, a laoreet est. Proin vitae erat metus. Curabitur dictum elit in ante feugiat cursus.
+         <div data-pws-tab="tab2" data-pws-tab-name="Google Maps">
+            <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:900px;"><div id="gmap_canvas" style="height:500px;width:900px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.trivoo.net" id="get-map-data">trivoo.net</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:11,center:new google.maps.LatLng(40.7127837,-74.00594130000002),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.7127837, -74.00594130000002)});infowindow = new google.maps.InfoWindow({content:"<b></b><br/><br/> New York" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});}google.maps.event.addDomListener(window, 'load', init_map);</script>
          </div>
-         <div data-pws-tab="tab3" data-pws-tab-name="Tab 3">
-            Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.
+         <div data-pws-tab="tab3" data-pws-tab-name="Mixed Content">
+            <div class="pws_example_mixed_content_block">
+               <div class="pws_example_mixed_content_left">
+                  <img src="mixedexample.jpg" alt="PWS Tabs jQuery Plugin">
+               </div><!-- pws_example_mixed_content_left -->
+               <div class="pws_example_mixed_content_right">
+                  <h3>Tab With Mixed Content</h3>
+                  <p>Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.</p>
+                  <p><iframe width="550" height="309" src="https://www.youtube.com/embed/7u2aX7mG2NU?rel=0" frameborder="0" allowfullscreen></iframe></p>
+               </div><!-- pws_example_mixed_content_right -->
+            </div><!-- pws_example_mixed_content_block -->
          </div>
       </div><!-- tabset0 -->
 
@@ -179,6 +202,53 @@
       </div><!-- tabset4 -->
 
 
+      <h3>RTL Support</h3>
+
+      <pre><code>$('.tabset6').pwstabs({
+   effect: 'slidedown',
+   defaultTab: 2,
+   containerWidth: '600px',
+   rtl: true
+});</code></pre>
+
+      <div class="tabset6">
+         <div data-pws-tab="tab111" data-pws-tab-name="Tab 111">
+            Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.
+         </div>
+         <div data-pws-tab="tab222" data-pws-tab-name="Tab 222">
+            Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.
+         </div>
+         <div data-pws-tab="tab333" data-pws-tab-name="Tab 333">
+            Donec pellentesque placerat mi, at rutrum metus tempor posuere. Nunc ut pellentesque purus. Nam auctor, magna eget elementum maximus, ligula augue ornare massa, id varius magna mi vel diam. Cras vel pharetra risus. Suspendisse eu varius nisl, a laoreet est. Proin vitae erat metus. Curabitur dictum elit in ante feugiat cursus.
+         </div>
+      </div><!-- tabset6 -->
+
+
+
+      <h3>Tabs Horizontal Position</h3>
+
+      <pre><code>$('.tabset7').pwstabs({
+   effect: 'slidedown',
+   defaultTab: 2,
+   containerWidth: '600px',
+   horizontalPosition: 'bottom'
+});</code></pre>
+
+      <div class="tabset7">
+         <div data-pws-tab="tab111" data-pws-tab-name="Tab 111">
+            Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.
+         </div>
+         <div data-pws-tab="tab222" data-pws-tab-name="Tab 222">
+            Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.
+         </div>
+         <div data-pws-tab="tab333" data-pws-tab-name="Tab 333">
+            Donec pellentesque placerat mi, at rutrum metus tempor posuere. Nunc ut pellentesque purus. Nam auctor, magna eget elementum maximus, ligula augue ornare massa, id varius magna mi vel diam. Cras vel pharetra risus. Suspendisse eu varius nisl, a laoreet est. Proin vitae erat metus. Curabitur dictum elit in ante feugiat cursus.
+         </div>
+      </div><!-- tabset7 -->
+
+
+
+
       <h2 id="docs">Documentation</h2>
 
       <h3>Getting Started</h3>
@@ -251,6 +321,18 @@
                <td>100%</td>
                <td>Tabs container width</td>
                <td>Any size value (1,2,3.. / px,pt,em,%,cm..)</td>
+            </tr>
+            <tr>
+               <td>horizontalPosition</td>
+               <td>top</td>
+               <td>Horizontal position of Tabs controlls</td>
+               <td>top / bottom</td>
+            </tr>
+            <tr>
+               <td>rtl</td>
+               <td>false</td>
+               <td>RTL support</td>
+               <td>true / false</td>
             </tr>
          </tbody>
       </table>

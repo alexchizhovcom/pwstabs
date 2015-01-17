@@ -3,10 +3,14 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.1
-  * Version from: 16.01.2015
+  * Version: 1.1.2
+  * Version from: 17.01.2015
   * Licensed under the MIT license
   */
+.pws_tabs_container.pws_tabs_rtl{
+   text-align: right;
+   direction: rtl;
+}
 .pws_tabs_container ul.pws_tabs_controll{
    list-style: none;
 }
@@ -20,6 +24,10 @@
    text-decoration: none;
    color: #fff;
    margin-right: 3px;
+}
+.pws_tabs_container.pws_tabs_rtl ul.pws_tabs_controll li a{
+   margin-right: 0;
+   margin-left: 3px;
 }
 .pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active{
    background-color: #fff;
@@ -55,6 +63,10 @@
    -moz-transition: all .3s ease-in-out;
    -o-transition: all .3s ease-in-out;
    -ms-transition: all .3s ease-in-out;
+}
+.pws_tabs_container.pws_tabs_rtl .pws_tab_single{
+   padding-right: 0;
+   padding-left: 20px;
 }
 
 /**
