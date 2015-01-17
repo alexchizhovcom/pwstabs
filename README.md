@@ -1,5 +1,7 @@
 # PWS Tabs jQuery Plugin
 
+Version 1.1.2
+
 jQuery Plugin to create tabs.
 
 All you need to do is add few divs for your tabs, and script will generate Tabs for you.
@@ -94,11 +96,28 @@ Just place plugins files into <strong>&lt;head&gt;</strong> section. <strong>Plu
 <td>Tabs container width</td>
 <td>Any size value (1,2,3.. / px,pt,em,%,cm..)</td>
 </tr>
+<tr>
+<td>horizontalPosition</td>
+<td>top</td>
+<td>Horizontal position of Tabs controlls</td>
+<td>top / bottom</td>
+</tr>
+<tr>
+<td>rtl</td>
+<td>false</td>
+<td>RTL support</td>
+<td>true / false</td>
+</tr>
 </tbody>
 </table>
 
 
 ## Changelog
+
+### Version 1.1.2
+1) Added RTL support.
+2) Added horizontalPosition settings: top / bottom.
+3) New examples with video, Google Maps and mixed content.
 
 ### Version 1.1.1
 1) Bug fix: added class selector to tabs controller ul element. Solved issue with ul elements in tabs content.
