@@ -115,8 +115,8 @@ Just place plugins files into <strong>&lt;head&gt;</strong> section. <strong>Plu
 ## Changelog
 
 ### Version 1.1.2
-1) Added RTL support.
-2) Added horizontalPosition settings: top / bottom.
+1) Added RTL support.<br>
+2) Added horizontalPosition settings: top / bottom.<br>
 3) New examples with video, Google Maps and mixed content.
 
 ### Version 1.1.1
