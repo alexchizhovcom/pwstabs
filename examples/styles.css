@@ -106,7 +106,9 @@ p.header_buttons a:hover{
    color: #ff7260;
    font-weight: bold;
 }
-
+.content table tr:nth-child(even) td{
+   background-color: #f0f0f0;
+}
 .content .pws_example_mixed_content_block{
    width: 900px;
    position: relative;

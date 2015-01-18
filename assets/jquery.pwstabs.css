@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.2
-  * Version from: 17.01.2015
+  * Version: 1.1.3
+  * Version from: 18.01.2015
   * Licensed under the MIT license
   */
 .pws_tabs_container.pws_tabs_rtl{
@@ -53,6 +53,9 @@
    -moz-transition-delay: .3s;
    -o-transition-delay: .3s;
    -ms-transition-delay: .3s;
+   
+   -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d; /* <-NB */
 }
 .pws_tab_single{
    position: absolute;
@@ -67,6 +70,38 @@
 .pws_tabs_container.pws_tabs_rtl .pws_tab_single{
    padding-right: 0;
    padding-left: 20px;
+}
+
+/**
+  * ######################################################
+  * Vertical Position
+  * ######################################################
+  */
+.pws_tabs_container.pws_tabs_vertical{
+   display: block;
+   position: relative;
+}
+.pws_tabs_container.pws_tabs_vertical:after{
+   display: block;
+   content: '';
+   clear: both;
+}
+.pws_tabs_container.pws_tabs_vertical ul.pws_tabs_controll{
+   position: relative;
+   float: left;
+   width: auto;
+}
+.pws_tabs_container.pws_tabs_vertical ul.pws_tabs_controll li{
+   display: block;
+}
+.pws_tabs_container.pws_tabs_vertical .pws_tabs_list{
+   position: relative;
+   float: left;
+}
+.pws_tabs_container.pws_tabs_vertical ul.pws_tabs_controll li a{
+   margin-right: 0;
+   margin-left: 0;
+   margin-bottom: 3px;
 }
 
 /**

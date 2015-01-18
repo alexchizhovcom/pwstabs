@@ -4,7 +4,7 @@
    <title>PWS Tabs</title>
    <link type="text/css" rel="stylesheet" href="../assets/jquery.pwstabs.css">
    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-   <script src="../assets/jquery.pwstabs-1.1.2.js"></script>
+   <script src="../assets/jquery.pwstabs-1.1.3.js"></script>
 
    <link type="text/css" rel="stylesheet" href="styles.css">
    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
@@ -49,6 +49,21 @@
             containerWidth: '600px',
             horizontalPosition: 'bottom'
          });
+         $('.tabset8').pwstabs({
+            effect: 'slideleft',
+            defaultTab: 1,
+            containerWidth: '600px',
+            tabsPosition: 'vertical',
+            verticalPosition: 'left'
+         });
+         $('.tabset9').pwstabs({
+            effect: 'slideright',
+            defaultTab: 1,
+            containerWidth: '600px',
+            tabsPosition: 'vertical',
+            verticalPosition: 'right'
+         });
+
       });
    </script>
 </head>
@@ -225,7 +240,7 @@
 
 
 
-      <h3>Tabs Horizontal Position</h3>
+      <h3>Tabs Position Horizontal Bottom</h3>
 
       <pre><code>$('.tabset7').pwstabs({
    effect: 'slidedown',
@@ -249,48 +264,117 @@
 
 
 
+      <h3>Tabs Position Vertical Left</h3>
+
+      <pre><code>$('.tabset8').pwstabs({
+   effect: 'slideleft',
+   defaultTab: 1,
+   containerWidth: '600px',
+   tabsPosition: 'vertical',
+   verticalPosition: 'left'
+});</code></pre>
+
+      <div class="tabset8">
+         <div data-pws-tab="tab111" data-pws-tab-name="Tab 111">
+            Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.
+         </div>
+         <div data-pws-tab="tab222" data-pws-tab-name="Tab 222">
+            Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.
+         </div>
+         <div data-pws-tab="tab333" data-pws-tab-name="Tab 333">
+            Donec pellentesque placerat mi, at rutrum metus tempor posuere. Nunc ut pellentesque purus. Nam auctor, magna eget elementum maximus, ligula augue ornare massa, id varius magna mi vel diam. Cras vel pharetra risus. Suspendisse eu varius nisl, a laoreet est. Proin vitae erat metus. Curabitur dictum elit in ante feugiat cursus.
+         </div>
+      </div><!-- tabset8 -->
+
+
+      <h3>Tabs Position Vertical Right</h3>
+
+      <pre><code>$('.tabset9').pwstabs({
+   effect: 'slideright',
+   defaultTab: 1,
+   containerWidth: '600px',
+   tabsPosition: 'vertical',
+   verticalPosition: 'right'
+});</code></pre>
+
+      <div class="tabset9">
+         <div data-pws-tab="tab111" data-pws-tab-name="Tab 111">
+            Quisque magna elit, maximus vel neque eget, laoreet commodo neque. Duis elementum ligula id metus rutrum, non vestibulum augue porttitor. Duis ullamcorper urna erat, vel convallis ipsum mattis vitae. Proin porttitor urna a enim ultrices ultrices. Etiam lacus elit, tincidunt vitae congue eu, sagittis sit amet ipsum. Nulla facilisi. Curabitur id elementum est. In eget lectus euismod, efficitur lorem sed, feugiat sem. Donec vel massa mi.
+         </div>
+         <div data-pws-tab="tab222" data-pws-tab-name="Tab 222">
+            Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.
+         </div>
+         <div data-pws-tab="tab333" data-pws-tab-name="Tab 333">
+            Donec pellentesque placerat mi, at rutrum metus tempor posuere. Nunc ut pellentesque purus. Nam auctor, magna eget elementum maximus, ligula augue ornare massa, id varius magna mi vel diam. Cras vel pharetra risus. Suspendisse eu varius nisl, a laoreet est. Proin vitae erat metus. Curabitur dictum elit in ante feugiat cursus.
+         </div>
+      </div><!-- tabset9 -->
+
+
+         
+
+
       <h2 id="docs">Documentation</h2>
 
       <h3>Getting Started</h3>
-      <p>All you really need to do is to create a DIV block, with DIV blocks in it and add DATA attributes.</p>
-      <p>1) Lets create main DIV:</p>
-      <pre><code>&lt;div class="hello_world"&gt;&lt;/div&gt;</code></pre>
-      <p>2) Lets say we want 3 tabs, lets create three DIVs and add DATA attributes like so:</p>
-      <pre><code>&lt;div class="hello_world"&gt;
+      <p>1) Include jQuery library and jQuery PWS Tabs plugin in the <strong>&lt;head&gt;</strong> section.</p>
 
-   &lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1"&gt;Our first tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2"&gt;Our second tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3"&gt;Our third tab&lt;/div&gt;
-         
-&lt;/div&gt;</code></pre>
-
-      <p><strong>data-pws-tab</strong> is used to initiate the tab and as its ID.</p>
-      <p><strong>data-pws-tab-name</strong> is used for a tab display name. Tabs are created automaticaly with this name!</p>
-
-
-      <h3>Include Plugin Files</h3>
-      <p>Just place plugins files into <strong>&lt;head&gt;</strong> section. <strong>Plugin requires jQuery!</strong></p>
-      <pre><code>&lt;!-- Include jQuery if needed --&gt;
-&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
 
 &lt;link type="text/css" rel="stylesheet" href="jquery.pwstabs.css"&gt;
 &lt;script src="jquery.pwstabs-1.1.0.js"&gt;&lt;/script&gt;</code></pre>
 
-      <h3>Initiate Plugin</h3>
 
-      <pre><code>jQuery(document).ready(function($){
-   $('#tabset0').pwstabs();        
+      <p>2) Create tabbed panels and use Html5 <strong>data-pws-*</strong> attributes to specify the ID & Name for the tabs.</p>
+
+<pre><code>&lt;div class="hello_world"&gt;
+
+   &lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1"&gt;Our first tab&lt;/div&gt;
+   &lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2"&gt;Our second tab&lt;/div&gt;
+   &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3"&gt;Our third tab&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+
+<p><strong>data-pws-tab</strong> is used to initiate the tab and as its ID.</p>
+<p><strong>data-pws-tab-name</strong> is used for a tab display name.</p>
+
+
+      <p>3) Call the plugin on the parent element to create a basic tabs interface with 100% width and 'scale' transition effect.</p>
+<pre><code>jQuery(document).ready(function($){
+   $('.hello_world').pwstabs();        
 });</code></pre>
 
 
-      <h3>Initiate Plugin With Options</h3>
-      <pre><code>jQuery(document).ready(function($){
-   $('.tabset1').pwstabs({
-      effect: 'scale',
-      defaultTab: 3,
-      containerWidth: '600px'
+<p>4) Available parameters to customize the tabs plugin.</p>
+<pre><code>jQuery(document).ready(function($){
+   $('.hello_world').pwstabs({
+
+      // scale, slideleft, slideright, slidetop, slidedown
+      effect: 'scale', 
+ 
+      // The tab to be opened by default
+      defaultTab: 1,    
+ 
+      // Set custom container width
+      // Any size value (1,2,3.. / px,pt,em,%,cm..)
+      containerWidth: '100%',
+
+      // Tabs position: horizontal / vertical
+      tabsPosition: 'horizontal',
+ 
+      // Tabs horizontal position: top / bottom
+      horizontalPosition: 'top',
+
+      // Tabs vertical position: left / right
+      verticalPosition: 'left',
+ 
+      // Right to left support: true/ false
+      rtl: false
+
    });        
 });</code></pre>
+
+
 
 
       <h3>Options</h3>
@@ -301,6 +385,7 @@
                <th>Default</th>
                <th>Description</th>
                <th>Available options</th>
+               <th>Type</th>
             </tr>
          </thead>
          <tbody>
@@ -309,30 +394,52 @@
                <td>scale</td>
                <td>Transition effect</td>
                <td>scale / slideleft / slideright / slidetop / slidedown</td>
+               <td>string</td>
             </tr>
             <tr>
                <td>defaultTab</td>
                <td>1</td>
                <td>Which tab is chosen by default</td>
                <td>Tab ID number starts with 1 (1,2,3..)</td>
+               <td>string</td>
             </tr>
             <tr>
                <td>containerWidth</td>
                <td>100%</td>
                <td>Tabs container width</td>
                <td>Any size value (1,2,3.. / px,pt,em,%,cm..)</td>
+               <td>number</td>
             </tr>
+            <tr>
+               <td>tabsPosition</td>
+               <td>horizontal</td>
+               <td>Define tabs position</td>
+               <td>horizontal / vertical</td>
+               <td>string</td>
+            </tr>
+            
             <tr>
                <td>horizontalPosition</td>
                <td>top</td>
                <td>Horizontal position of Tabs controlls</td>
                <td>top / bottom</td>
+               <td>string</td>
             </tr>
+
+            <tr>
+               <td>verticalPosition</td>
+               <td>left</td>
+               <td>Define Vertical tabs position</td>
+               <td>left / right</td>
+               <td>string</td>
+            </tr>
+
             <tr>
                <td>rtl</td>
                <td>false</td>
-               <td>RTL support</td>
+               <td>Right to left support</td>
                <td>true / false</td>
+               <td>boolean</td>
             </tr>
          </tbody>
       </table>

@@ -3,21 +3,25 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.2
-  * Version from: 17.01.2015
+  * Version: 1.1.3
+  * Version from: 18.01.2015
   * Licensed under the MIT license
   */
 ;(function ($, window, document, undefined) {
+
 
    var pluginName = "pwstabs",
     defaults = {
       effect: 'scale',              // You can change effects of your tabs container: scale, slideleft, slideright, slidetop, slidedown
       defaultTab: 1,                // The tab we want to be opened by default
       containerWidth: '100%',       // Set custom container width if not set then 100% is used
-      //tabsPosition: 'horizontal',   // Tabs position: horizontal / vertical
-      horizontalPosition: 'top',     // Tabs horizontal position: top / bottom
-      rtl: false                       // Right to left support: true/ false
+      tabsPosition: 'horizontal',   // Tabs position: horizontal / vertical
+      horizontalPosition: 'top',    // Tabs horizontal position: top / bottom
+      verticalPosition: 'left',     // Tabs vertical position: left / right
+      rtl: false                    // Right to left support: true/ false
     };
+
+
 
    function Plugin(element, options) {
       this.element = $(element);
@@ -46,8 +50,25 @@
             pwsRtlClass = ' pws_tabs_rtl';
          }
 
+
+         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical
+            if ( this.settings.verticalPosition == 'left' ){ // Vertical Left
+               positionClass = ' pws_tabs_vertical pws_tabs_vertical_left';
+            } else { // Vertical Right
+               positionClass = ' pws_tabs_vertical pws_tabs_vertical_right';
+            }
+         } else { // Horizontal
+            if ( this.settings.horizontalPosition == 'top' ){ // Horizontal Top
+               positionClass = ' pws_tabs_horizontal pws_tabs_horizontal_top';               
+            } else { // Horizontal Bottom
+               positionClass = ' pws_tabs_horizontal pws_tabs_horizontal_bottom';
+            }
+         }
+
+
+
          // Put tabs container into another block
-         this.$elem.wrap('<div class="pws_tabs_container'+pwsRtlClass+'" style="width:' + this.settings.containerWidth + '"></div>');
+         this.$elem.wrap('<div class="pws_tabs_container'+pwsRtlClass+positionClass+'" style="width:' + this.settings.containerWidth + '"></div>');
 
 
          // Hiding selectors children (Tabs)
@@ -68,25 +89,73 @@
 
 
          // Add UL / LI and A control elements to Tabs Container
-         
-         // Check if Horizontal and what position
-         if ( this.settings.horizontalPosition == 'top' ){
-            this.$elem.parent().prepend('<ul class="pws_tabs_controll pws_tabs_horizontal_top"></ul>');
-         } else {
-            this.$elem.parent().append('<ul class="pws_tabs_controll pws_tabs_horizontal_bottom"></ul>');
+
+         // Check => Horizontal / Vertical position @since 1.1.3
+         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical
+            if ( this.settings.verticalPosition == 'left' ){ // Vertical Left
+               this.$elem.parent().prepend('<ul class="pws_tabs_controll"></ul>');
+            } else { // Vertical Right
+               this.$elem.parent().append('<ul class="pws_tabs_controll"></ul>');
+            }
+         } else { // Horizontal
+            if ( this.settings.horizontalPosition == 'top' ){ // Horizontal Top
+               this.$elem.parent().prepend('<ul class="pws_tabs_controll"></ul>');
+            } else { // Horizontal Bottom
+               this.$elem.parent().append('<ul class="pws_tabs_controll"></ul>');
+            }
          }
+
+
 
          var pwsTabsDataCounter = '1';
          this.$elem.children('[data-pws-tab]').each(function(){
+            
             // Set Data attributes with tab id number 1+
             $(this).attr('data-pws-tab-id', pwsTabsDataCounter);
+
             // Add LIs and A controls
             $(this).parent().parent().find('ul.pws_tabs_controll').append('<li><a href="#" data-tab-id="' + $(this).data('pws-tab') + '">' + $(this).data('pws-tab-name') + '</a></li>');
+
             // Adding class to our selector children (Tabs)
             $(this).addClass('pws_tab_single');
+
             pwsTabsDataCounter++;
+
          });
-         
+
+
+
+         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical position
+            /**
+             * #############################################
+             * Tabs and content width for vertical position
+             * #############################################
+             */
+            // Set tabs width
+            var verticalTabsWidth = parseInt(this.$elem.parent().find('ul.pws_tabs_controll li a').outerWidth()) + 1;
+            this.$elem.parent().find('ul.pws_tabs_controll').width(verticalTabsWidth);
+
+            // Set content width
+            var verticalContentWidth = parseInt(this.$elem.parent().outerWidth()) - verticalTabsWidth;
+            this.$elem.outerWidth(verticalContentWidth);
+
+            /**
+             * #############################################
+             * Tabs height should not be less than content
+             * #############################################
+             */
+            var verticalTabsHeight = parseInt(this.$elem.parent().find('ul.pws_tabs_controll').outerHeight());
+            var verticalContentHeight = parseInt(this.$elem.outerHeight());
+
+            // Check if content height less than tabs height
+            if( verticalContentHeight < verticalTabsHeight ){
+               this.$elem.css('min-height',verticalTabsHeight);
+            }
+         }
+
+
+
+
          // Now lets show default Tab
          if (this.settings.effect == 'slideleft') {
             this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_slide_left_show');
@@ -103,9 +172,19 @@
          }
 
          // Set container height to default tabs height
-         this.$elem.height(parseInt(this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').height()));
+         // Check if horizontal @since 1.1.2
+         if ( this.settings.tabsPosition == 'horizontal' ){ // Vertical
+            this.$elem.height(parseInt(this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').height()));
+         } else {
+            if( verticalContentHeight < verticalTabsHeight ){ // Check if contents height less than tabs
+               this.$elem.css('min-height',verticalTabsHeight);
+            }
+         }
+
+
          // Now lets add active class to default tabs controller
          this.$elem.parent().find('ul li a[data-tab-id="' + this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').data('pws-tab') + '"]').addClass('pws_tab_active');
+
 
          // First lets find A link and add click function
          this.$elem.parent().find('ul li a').on('click', {pwsOptions : this.settings}, function (e) {
@@ -125,6 +204,7 @@
             var allTabs = $(this).parent().parent().parent().find('[data-pws-tab]');
 
             var getTabsContainer = $(this).parent().parent().parent().find('.pws_tabs_list');
+
 
             // Now lets make it cooler, and add some effects to tabs container
             if (effect == 'slideleft') {
