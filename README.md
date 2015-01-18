@@ -1,6 +1,6 @@
 # PWS Tabs jQuery Plugin
 
-Version 1.1.2
+Version 1.1.3
 
 PWS Tabs is a lightweight jQuery tabs plugin to create flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
