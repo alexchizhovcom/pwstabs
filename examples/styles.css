@@ -28,7 +28,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .header a:hover{
    color: #505050;
 }
-
 .header p{
    margin: 6px 0;
    padding: 0;
@@ -51,7 +50,6 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 p.header_buttons a:hover{
    background-color: #9bd7d5;
 }
-
 .content{
    width: 940px;
    display: block;
@@ -70,6 +68,14 @@ p.header_buttons a:hover{
    color: #fff;
    margin-bottom: 15px;
    margin-top: 25px;
+}
+.content a{
+   color: #fff5c3;
+   text-decoration: underline;
+}
+.content a:hover{
+   color: #fff;
+   text-decoration: none;
 }
 .content code{
    width: 100%;
@@ -94,6 +100,9 @@ p.header_buttons a:hover{
    font-weight: bold;
    font-size: 17px;
    color: #fff5c3;
+}
+.content code strong{
+   color: #000;
 }
 .content table{
    background-color: #fff;

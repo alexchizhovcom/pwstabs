@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.3
-  * Version from: 18.01.2015
+  * Version: 1.1.4
+  * Version from: 19.01.2015
   * Licensed under the MIT license
   */
 ;(function ($, window, document, undefined) {
@@ -12,7 +12,7 @@
 
    var pluginName = "pwstabs",
     defaults = {
-      effect: 'scale',              // You can change effects of your tabs container: scale, slideleft, slideright, slidetop, slidedown
+      effect: 'scale',              // You can change effects of your tabs container: scale / slideleft / slideright / slidetop / slidedown / none
       defaultTab: 1,                // The tab we want to be opened by default
       containerWidth: '100%',       // Set custom container width if not set then 100% is used
       tabsPosition: 'horizontal',   // Tabs position: horizontal / vertical
@@ -51,6 +51,13 @@
          }
 
 
+         // Check if Effect is none
+         var pwsNoEffectClass = '';
+         if( this.settings.effect == 'none' ){
+            pwsNoEffectClass = ' pws_tabs_noeffect';
+         }
+
+
          if ( this.settings.tabsPosition == 'vertical' ){ // Vertical
             if ( this.settings.verticalPosition == 'left' ){ // Vertical Left
                positionClass = ' pws_tabs_vertical pws_tabs_vertical_left';
@@ -66,9 +73,8 @@
          }
 
 
-
          // Put tabs container into another block
-         this.$elem.wrap('<div class="pws_tabs_container'+pwsRtlClass+positionClass+'" style="width:' + this.settings.containerWidth + '"></div>');
+         this.$elem.wrap('<div class="pws_tabs_container'+pwsRtlClass+positionClass+pwsNoEffectClass+'" style="width:' + this.settings.containerWidth + '"></div>');
 
 
          // Hiding selectors children (Tabs)
@@ -83,6 +89,8 @@
             $(pwsTabs).addClass('pws_tabs_slide_top_hide');  
          } else if (this.settings.effect == 'slidedown') {
             $(pwsTabs).addClass('pws_tabs_slide_down_hide');
+         } else if (this.settings.effect == 'none') {
+            $(pwsTabs).addClass('pws_tabs_none_hide');
          } else { // In case something else is in the settings field that is not correct
             $(pwsTabs).addClass('pws_tabs_scale_hide');
          }
@@ -105,8 +113,13 @@
             }
          }
 
+         
 
-
+         /**
+         * #####################################################################
+         * Create Tabs controlls for each Tab (div with HTML5 data attribute)
+         * #####################################################################
+         */
          var pwsTabsDataCounter = '1';
          this.$elem.children('[data-pws-tab]').each(function(){
             
@@ -124,8 +137,7 @@
          });
 
 
-
-         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical position
+         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical
             /**
              * #############################################
              * Tabs and content width for vertical position
@@ -138,6 +150,7 @@
             // Set content width
             var verticalContentWidth = parseInt(this.$elem.parent().outerWidth()) - verticalTabsWidth;
             this.$elem.outerWidth(verticalContentWidth);
+
 
             /**
              * #############################################
@@ -155,8 +168,11 @@
 
 
 
-
-         // Now lets show default Tab
+         /**
+         * #############################################
+         * Show default Tab
+         * #############################################
+         */
          if (this.settings.effect == 'slideleft') {
             this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_slide_left_show');
          } else if (this.settings.effect == 'scale') {
@@ -167,6 +183,8 @@
             this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_slide_top_show');
          } else if (this.settings.effect == 'slidedown') {
             this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_slide_down_show');
+         } else if (this.settings.effect == 'none') {
+            this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_none_show');
          } else { // In case something else is in the settings field that is not correct
             this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').addClass('pws_tabs_scale_show');
          }
@@ -182,8 +200,34 @@
          }
 
 
-         // Now lets add active class to default tabs controller
+         /**
+         * #############################################
+         * Add active class to default tabs controller
+         * #############################################
+         */
          this.$elem.parent().find('ul li a[data-tab-id="' + this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').data('pws-tab') + '"]').addClass('pws_tab_active');
+
+
+         
+         /**
+         * #############################################
+         * Check if a Tab controll has icon data
+         * #############################################
+         */
+         this.$elem.children('[data-pws-tab-icon]').each(function(){
+
+            var tabId = $(this).attr('data-pws-tab');
+            var tabName = $(this).attr('data-pws-tab-name');
+            var iconData = $(this).attr('data-pws-tab-icon');
+
+            if( tabName == '' ){
+               $(this).parent().parent().find('ul.pws_tabs_controll li a[data-tab-id="'+tabId+'"]').addClass('pws_tab_noname');
+            }
+
+            $(this).parent().parent().find('ul.pws_tabs_controll li a[data-tab-id="'+tabId+'"]').prepend('<i class="fa '+iconData+'"></i>');
+         });
+
+
 
 
          // First lets find A link and add click function
@@ -222,6 +266,9 @@
             } else if (effect == 'slidedown') {
                allTabs.removeClass('pws_tabs_slide_down_show').addClass('pws_tabs_slide_down_hide');
                currentTab.addClass('pws_tabs_slide_down_show');
+            } else if (effect == 'none') {
+               allTabs.removeClass('pws_tabs_none_show').addClass('pws_tabs_none_hide');
+               currentTab.addClass('pws_tabs_none_show');
             } else { // In case something else is in the settings field that is not correct
                allTabs.removeClass('pws_tabs_scale_show').addClass('pws_tabs_scale_hide');
                currentTab.addClass('pws_tabs_scale_show');

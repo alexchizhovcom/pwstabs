@@ -1,10 +1,8 @@
 # PWS Tabs jQuery Plugin
 
-Version 1.1.2
+Version 1.1.4
 
 PWS Tabs is a lightweight jQuery tabs plugin to create flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
-
-All you need to do is add few divs for your tabs, and script will generate Tabs for you.
 
 ## Demo
 
@@ -20,9 +18,9 @@ Online demo: http://alexchizhov.com/pwstabs
 <pre><code>&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
 
 &lt;link type="text/css" rel="stylesheet" href="jquery.pwstabs.css"&gt;
-&lt;script src="jquery.pwstabs-1.1.0.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="jquery.pwstabs-1.1.4.js"&gt;&lt;/script&gt;</code></pre>
 
-2) Create tabbed panels and use Html5 <code>data-pws-*</code> attributes to specify the ID & Name for the tabs.
+2) Create tabbed panels and use HTML5 <code>data-pws-*</code> attributes to specify the ID & Name for the tabs.
 
 <pre><code>&lt;div class="hello_world"&gt;
 
@@ -48,7 +46,7 @@ Online demo: http://alexchizhov.com/pwstabs
 <pre><code>jQuery(document).ready(function($){
    $('.hello_world').pwstabs({
 
-      // scale, slideleft, slideright, slidetop, slidedown
+      // scale / slideleft / slideright / slidetop / slidedown / none
       effect: 'scale', 
  
       // The tab to be opened by default
@@ -74,6 +72,23 @@ Online demo: http://alexchizhov.com/pwstabs
 });</code></pre>
 
 
+<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
+
+      <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
+
+      <pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css"&gt;</code></pre>
+
+      <p>5.2) Use HTML5 <strong>data-pws-tab-icon</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
+
+      <pre><code>&lt;div class="hello_world"&gt;
+
+   &lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" <strong>data-pws-tab-icon="fa-heart"</strong>&gt;Our first tab&lt;/div&gt;
+   &lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" <strong>data-pws-tab-icon="fa-star"</strong>&gt;Our second tab&lt;/div&gt;
+   &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" <strong>data-pws-tab-icon="fa-map-marker"</strong>&gt;Our third tab&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+
 
 ## Options
 
@@ -92,7 +107,7 @@ Online demo: http://alexchizhov.com/pwstabs
 <td>effect</td>
 <td>scale</td>
 <td>Transition effect</td>
-<td>scale / slideleft / slideright / slidetop / slidedown</td>
+<td>scale / slideleft / slideright / slidetop / slidedown / none</td>
 <td>string</td>
 </tr>
 <tr>
@@ -119,7 +134,7 @@ Online demo: http://alexchizhov.com/pwstabs
 <tr>
 <td>horizontalPosition</td>
 <td>top</td>
-<td>Horizontal position of Tabs controlls</td>
+<td>Define Horizontal tabs position</td>
 <td>top / bottom</td>
 <td>string</td>
 </tr>
@@ -142,6 +157,11 @@ Online demo: http://alexchizhov.com/pwstabs
 
 
 ## Changelog
+
+### Version 1.1.4 (19.01.2015)
+1) Added new effect: none. Good for eCommerce websites. Customers don't like to wait :)
+2) Font Awesome 4.2.0 Support => Tabs Icons
+
 
 ### Version 1.1.3 (18.01.2015)
 1) Added tabsPosition settings: horizontal / vertical.<br>

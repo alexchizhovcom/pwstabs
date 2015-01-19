@@ -3,14 +3,10 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.3
-  * Version from: 18.01.2015
+  * Version: 1.1.4
+  * Version from: 19.01.2015
   * Licensed under the MIT license
   */
-.pws_tabs_container.pws_tabs_rtl{
-   text-align: right;
-   direction: rtl;
-}
 .pws_tabs_container ul.pws_tabs_controll{
    list-style: none;
 }
@@ -25,10 +21,13 @@
    color: #fff;
    margin-right: 3px;
 }
-.pws_tabs_container.pws_tabs_rtl ul.pws_tabs_controll li a{
-   margin-right: 0;
-   margin-left: 3px;
+.pws_tabs_container ul.pws_tabs_controll li a i{
+   margin-right: 8px;
 }
+.pws_tabs_container ul.pws_tabs_controll li a.pws_tab_noname i{
+   margin-right: 0;
+}
+
 .pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active{
    background-color: #fff;
    color: #505050;
@@ -53,9 +52,6 @@
    -moz-transition-delay: .3s;
    -o-transition-delay: .3s;
    -ms-transition-delay: .3s;
-   
-   -webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d; /* <-NB */
 }
 .pws_tab_single{
    position: absolute;
@@ -67,11 +63,30 @@
    -o-transition: all .3s ease-in-out;
    -ms-transition: all .3s ease-in-out;
 }
-.pws_tabs_container.pws_tabs_rtl .pws_tab_single{
-   padding-right: 0;
-   padding-left: 20px;
+/**
+  * ######################################################
+  * No Effect
+  * ######################################################
+  */
+.pws_tabs_noeffect .pws_tabs_list{
+   transition: all .1s ease-in-out;
+   -webkit-transition: all .1s ease-in-out;
+   -moz-transition: all .1s ease-in-out;
+   -o-transition: all .1s ease-in-out;
+   -ms-transition: all .1s ease-in-out;
+   transition-delay: 0;
+   -webkit-transition-delay: 0;
+   -moz-transition-delay: 0;
+   -ms-transition-delay: 0;
+   -o-transition-delay: 0;
 }
-
+.pws_tabs_noeffect .pws_tab_single{
+   transition: none;
+   -webkit-transition: none;
+   -moz-transition: none;
+   -ms-transition: none;
+   -o-transition: none;
+}
 /**
   * ######################################################
   * Vertical Position
@@ -103,7 +118,23 @@
    margin-left: 0;
    margin-bottom: 3px;
 }
-
+/**
+  * ######################################################
+  * Right To Left Support
+  * ######################################################
+  */
+.pws_tabs_container.pws_tabs_rtl{
+   text-align: right;
+   direction: rtl;
+}
+.pws_tabs_container.pws_tabs_rtl ul.pws_tabs_controll li a{
+   margin-right: 0;
+   margin-left: 3px;
+}
+.pws_tabs_container.pws_tabs_rtl .pws_tab_single{
+   padding-right: 0;
+   padding-left: 20px;
+}
 /**
   * ######################################################
   * SCALE EFFECT
@@ -135,7 +166,6 @@
    -ms-transition-delay: .3s;
    transition-delay: .3s;
 }
-
 /**
   * ######################################################
   * SLIDE LEFT EFFECT
@@ -166,7 +196,6 @@
    -o-transition-delay: .3s;
    transition-delay: .3s;
 }
-
 /**
   * ######################################################
   * SLIDE RIGHT EFFECT
@@ -197,7 +226,6 @@
    -o-transition-delay: .3s;
    transition-delay: .3s;
 }
-
 /**
   * ######################################################
   * SLIDE TOP EFFECT
@@ -228,7 +256,6 @@
    -o-transition-delay: .3s;
    transition-delay: .3s;
 }
-
 /**
   * ######################################################
   * SLIDE DOWN EFFECT
@@ -258,4 +285,15 @@
    -ms-transition-delay: .3s;
    -o-transition-delay: .3s;
    transition-delay: .3s;
+}
+/**
+  * ######################################################
+  * NO EFFECT : NONE
+  * ######################################################
+  */
+.pws_tabs_none_hide{
+   display: none;
+}
+.pws_tabs_none_show{
+   display: block;
 }
