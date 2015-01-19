@@ -82,9 +82,9 @@ Online demo: http://alexchizhov.com/pwstabs
 
       <pre><code>&lt;div class="hello_world"&gt;
 
-   &lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" <strong>data-pws-tab-icon="fa-heart"</strong>&gt;Our first tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" <strong>data-pws-tab-icon="fa-star"</strong>&gt;Our second tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" <strong>data-pws-tab-icon="fa-map-marker"</strong>&gt;Our third tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" data-pws-tab-icon="fa-heart"&gt;Our first tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" data-pws-tab-icon="fa-star"&gt;Our second tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" data-pws-tab-icon="fa-map-marker"&gt;Our third tab&lt;/div&gt;
 
 &lt;/div&gt;</code></pre>
 
