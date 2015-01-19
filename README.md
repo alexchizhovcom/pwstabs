@@ -74,17 +74,17 @@ Online demo: http://alexchizhov.com/pwstabs
 
 <p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
 
-      <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
+<p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
-      <pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css"&gt;</code></pre>
+<pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css"&gt;</code></pre>
 
-      <p>5.2) Use HTML5 <strong>data-pws-tab-icon</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
+<p>5.2) Use HTML5 <strong>data-pws-tab-icon</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
 
-      <pre><code>&lt;div class="hello_world"&gt;
+<pre><code>&lt;div class="hello_world"&gt;
 
-&lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" data-pws-tab-icon="fa-heart"&gt;Our first tab&lt;/div&gt;
-&lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" data-pws-tab-icon="fa-star"&gt;Our second tab&lt;/div&gt;
-&lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" data-pws-tab-icon="fa-map-marker"&gt;Our third tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" <strong>data-pws-tab-icon="fa-heart"</strong>&gt;Our first tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" <strong>data-pws-tab-icon="fa-star"</strong>&gt;Our second tab&lt;/div&gt;
+&lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" <strong>data-pws-tab-icon="fa-map-marker"</strong>&gt;Our third tab&lt;/div&gt;
 
 &lt;/div&gt;</code></pre>
 
@@ -159,7 +159,7 @@ Online demo: http://alexchizhov.com/pwstabs
 ## Changelog
 
 ### Version 1.1.4 (19.01.2015)
-1) Added new effect: none. Good for eCommerce websites. Customers don't like to wait :)
+1) Added new effect: none. Good for eCommerce websites. Customers don't like to wait :)<br>
 2) Font Awesome 4.2.0 Support => Tabs Icons
 
 
