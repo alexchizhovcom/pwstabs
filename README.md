@@ -122,14 +122,14 @@ jQuery(document).ready(function($){
 <td>1</td>
 <td>Which tab is chosen by default</td>
 <td>Tab ID number starts with 1 (1,2,3..)</td>
-<td>string</td>
+<td>number</td>
 </tr>
 <tr>
 <td>containerWidth</td>
 <td>100%</td>
 <td>Tabs container width</td>
 <td>Any size value (1,2,3.. / px,pt,em,%,cm..)</td>
-<td>number</td>
+<td>string</td>
 </tr>
 <tr>
 <td>tabsPosition</td>
