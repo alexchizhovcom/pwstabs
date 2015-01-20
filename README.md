@@ -1,49 +1,52 @@
-# PWS Tabs jQuery Plugin
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.1.4](#version-114-19012015)</sup>
 
-Version 1.1.4
-
-PWS Tabs is a lightweight jQuery tabs plugin to create flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
+####PWS Tabs is a lightweight jQuery tabs plugin to create flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
 ## Demo
 
-Online demo: http://alexchizhov.com/pwstabs
+Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
+![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/pwstabs114.jpg)
 
 ## Documentation
 
 ### Getting Started
 
-1) Include jQuery library and jQuery PWS Tabs plugin in the <strong>&lt;head&gt;</strong> section.
+1) Include jQuery library and jQuery PWS Tabs plugin in the <strong>`<head>`</strong> section.
+```html
+<script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
 
-<pre><code>&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
+<link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
+<script src="jquery.pwstabs-1.1.4.js"></script>
+```
 
-&lt;link type="text/css" rel="stylesheet" href="jquery.pwstabs.css"&gt;
-&lt;script src="jquery.pwstabs-1.1.4.js"&gt;&lt;/script&gt;</code></pre>
+2) Create tabbed panels and use HTML5 `data-pws-*` attributes to specify the ID & Name for the tabs.
 
-2) Create tabbed panels and use HTML5 <code>data-pws-*</code> attributes to specify the ID & Name for the tabs.
+```html
+<div class="hello_world">
 
-<pre><code>&lt;div class="hello_world"&gt;
+   <div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1">Our first tab</div>
+   <div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2">Our second tab</div>
+   <div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3">Our third tab</div>
 
-   &lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1"&gt;Our first tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2"&gt;Our second tab&lt;/div&gt;
-   &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3"&gt;Our third tab&lt;/div&gt;
+</div>
+```
 
-&lt;/div&gt;</code></pre>
+<strong>`data-pws-tab`</strong> is used to initiate the tab and as its ID.
 
-
-<strong><code>data-pws-tab</code></strong> is used to initiate the tab and as its ID.
-
-<strong><code>data-pws-tab-name</code></strong> is used for a tab display name.
+<strong>`data-pws-tab-name`</strong> is used for a tab display name.
 
 
 3) Call the plugin on the parent element to create a basic tabs interface with 100% width and 'scale' transition effect.
-<pre><code>jQuery(document).ready(function($){
-   $('.hello_world').pwstabs();        
-});</code></pre>
-
+```js
+jQuery(document).ready(function($){
+   $('.hello_world').pwstabs();
+});
+```
 
 4) Available parameters to customize the tabs plugin.
-<pre><code>jQuery(document).ready(function($){
+```js
+jQuery(document).ready(function($){
    $('.hello_world').pwstabs({
 
       // scale / slideleft / slideright / slidetop / slidedown / none
@@ -69,25 +72,29 @@ Online demo: http://alexchizhov.com/pwstabs
       rtl: false
 
    });        
-});</code></pre>
+});
+```
 
 
 <p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
 
 <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
-<pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css"&gt;</code></pre>
+```html
+<link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css">
+```
 
-<p>5.2) Use HTML5 <strong>data-pws-tab-icon</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
+<p>5.2) Use HTML5 <strong>`data-pws-tab-icon`</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
 
-<pre><code>&lt;div class="hello_world"&gt;
+```html
+<div class="hello_world">
 
-&lt;div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" <strong>data-pws-tab-icon="fa-heart"</strong>&gt;Our first tab&lt;/div&gt;
-&lt;div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" <strong>data-pws-tab-icon="fa-star"</strong>&gt;Our second tab&lt;/div&gt;
-&lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" <strong>data-pws-tab-icon="fa-map-marker"</strong>&gt;Our third tab&lt;/div&gt;
+<div data-pws-tab="anynameyouwant1" data-pws-tab-name="Tab Title 1" data-pws-tab-icon="fa-heart">Our first tab</div>;
+<div data-pws-tab="anynameyouwant2" data-pws-tab-name="Tab Title 2" data-pws-tab-icon="fa-star">Our second tab</div>
+<div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" data-pws-tab-icon="fa-map-marker">Our third tab</div>
 
-&lt;/div&gt;</code></pre>
-
+</div>
+```
 
 
 ## Options
