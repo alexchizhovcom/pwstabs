@@ -1,12 +1,16 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.1.4](#version-114-19012015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.2.0](#version-120-21012015)</sup>
 
-####PWS Tabs is a lightweight jQuery tabs plugin to create flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
+####PWS Tabs is a lightweight jQuery tabs plugin to create responsive flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
+
+####PWS TABS is now Responsive!
+This feature is still beta, please, help me test it and find possible issues.
+![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
 
 ## Demo
 
 Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
-![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/pwstabs114.jpg)
+![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabs1.2.0.jpg)
 
 ## Documentation
 
@@ -17,7 +21,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 <script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
-<script src="jquery.pwstabs-1.1.4.js"></script>
+<script src="jquery.pwstabs-1.2.0.js"></script>
 ```
 
 2) Create tabbed panels and use HTML5 `data-pws-*` attributes to specify the ID & Name for the tabs.
@@ -67,7 +71,14 @@ jQuery(document).ready(function($){
 
       // Tabs vertical position: left / right
       verticalPosition: 'left',
- 
+      
+      // BETA: Make tabs container responsive: true / false (!!! BETA)
+      responsive: false,
+
+      // Themes available: default: '' / pws_theme_violet / pws_theme_green / pws_theme_yellow
+      // pws_theme_gold / pws_theme_orange / pws_theme_red / pws_theme_purple / pws_theme_grey
+      theme: '',
+      
       // Right to left support: true/ false
       rtl: false
 
@@ -153,6 +164,20 @@ jQuery(document).ready(function($){
 <td>string</td>
 </tr>
 <tr>
+<td>theme</td>
+<td>''</td>
+<td>Change tabs theme</td>
+<td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey</td>
+<td>string</td>
+</tr>
+<tr>
+<td>responsive</td>
+<td>false</td>
+<td>!!BETA!! Make tabs responsive</td>
+<td>true / false</td>
+<td>boolean</td>
+</tr>
+<tr>
 <td>rtl</td>
 <td>false</td>
 <td>Right to left support</td>
@@ -164,6 +189,13 @@ jQuery(document).ready(function($){
 
 
 ## Changelog
+
+### Version 1.2.0 (21.01.2015)
+1) Made plugin responsive.<br>
+2) Added themes support. 9 color schemes are available.<br>
+3) Optimized code a bit.<br>
+4) Added responsive.html file in /examples/ directory.<br>
+5) Added colors examples in /examples/examples.html
 
 ### Version 1.1.4 (19.01.2015)
 1) Added new effect: none. Good for eCommerce websites. Customers don't like to wait :)<br>

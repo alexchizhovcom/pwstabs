@@ -28,6 +28,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 .header a:hover{
    color: #505050;
 }
+
 .header p{
    margin: 6px 0;
    padding: 0;
@@ -54,6 +55,13 @@ p.header_buttons a:hover{
    width: 940px;
    display: block;
    margin: 0 auto;
+}
+.content.demo_responsive{
+   width: 100%;
+   padding: 0 20px;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
 }
 .content h2{
    font-size: 40px;
@@ -151,6 +159,47 @@ table tbody tr td{
    font-size: 17px;
    color: #505050;
    font-weight: 300;
+}
+/* Demo colors */
+.content .pws_demo_colors{
+   display: block;
+   margin: 15px 0;
+}
+.content .pws_demo_colors a{
+   width: 30px;
+   height: 30px;
+   display: inline-block;
+   border: 3px solid #fff;
+   box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+}
+.content .pws_demo_colors a[data-demo-color="cyan"]{
+   background-color: #9bd7d5;
+}
+.content .pws_demo_colors a[data-demo-color="violet"]{
+   background-color: #c72c66;
+}
+.content .pws_demo_colors a[data-demo-color="green"]{
+   background-color: #86c447;
+}
+.content .pws_demo_colors a[data-demo-color="yellow"]{
+   background-color: #fdb813;
+}
+.content .pws_demo_colors a[data-demo-color="gold"]{
+   background-color: #f89827;
+}
+.content .pws_demo_colors a[data-demo-color="orange"]{
+   background-color: #f15b42;
+}
+.content .pws_demo_colors a[data-demo-color="red"]{
+   background-color: #e41937;
+}
+.content .pws_demo_colors a[data-demo-color="purple"]{
+   background-color: #672e8d;
+}
+.content .pws_demo_colors a[data-demo-color="grey"]{
+   background-color: #4d4d4f;
 }
 .footer{
    display: block;

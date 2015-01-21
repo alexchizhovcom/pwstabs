@@ -2,83 +2,83 @@
 <html lang="en">
 <head>
    <title>PWS Tabs</title>
-   <!-- Example Page Stylesheet -->
-   <link type="text/css" rel="stylesheet" href="styles.css">
-   <!-- Roboto Font From Google Fonts -->
-   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
-   
-   <!-- jQuery library -->
-   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-
-   <!-- PWS Tabs Plugin Stylesheet -->
    <link type="text/css" rel="stylesheet" href="../assets/jquery.pwstabs.css">
-   <!-- PWS Tabs Plugin Script -->
-   <script src="../assets/jquery.pwstabs-1.1.4.js"></script>
+   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+   <script src="../assets/jquery.pwstabs-1.2.0.js"></script>
 
-   <!-- Font Awesome Stylesheet -->
+   <link type="text/css" rel="stylesheet" href="styles.css">
+   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+
    <link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css">
 
    <script>
       jQuery(document).ready(function ($) {
-         $('.tabset0').pwstabs(); // Default Usage
+         $('.tabset0').pwstabs();
          $('.tabset1').pwstabs({
-            effect: 'scale',        // Transition effect
-            defaultTab: 3,          // Tab opened by default
-            containerWidth: '600px' // Container width
+            effect: 'scale',
+            defaultTab: 3,
+            containerWidth: '600px'
          });
          $('.tabset2').pwstabs({
-            effect: 'slideleft',    // Transition effect
-            defaultTab: 2,          // Tab opened by default
-            containerWidth: '600px' // Container width
+            effect: 'slideleft',
+            defaultTab: 2,
+            containerWidth: '600px'
          });
          $('.tabset3').pwstabs({
-            effect: 'slidetop',     // Transition effect
-            defaultTab: 3,          // Tab opened by default
-            containerWidth: '600px' // Container width
+            effect: 'slidetop',
+            defaultTab: 3,
+            containerWidth: '600px'
          });
          $('.tabset4').pwstabs({
-            effect: 'slidedown',    // Transition effect
-            defaultTab: 2,          // Tab opened by default
-            containerWidth: '600px' // Container width
+            effect: 'slidedown',
+            defaultTab: 2,
+            containerWidth: '600px'
          });
          $('.tabset5').pwstabs({
-            effect: 'slideright',   // Transition effect
-            defaultTab: 1,          // Tab opened by default
-            containerWidth: '600px' // Container width
+            effect: 'slideright',
+            defaultTab: 1,
+            containerWidth: '600px'
          });
          $('.tabset6').pwstabs({
-            effect: 'slidedown',    // Transition effect
-            defaultTab: 2,          // Tab opened by default
-            containerWidth: '600px',// Container width
+            effect: 'slidedown',
+            defaultTab: 2,
+            containerWidth: '600px',
             rtl: true
          });
          $('.tabset7').pwstabs({
-            effect: 'slidedown',          // Transition effect
-            defaultTab: 2,                // Tab opened by default
-            containerWidth: '600px',      // Container width
-            horizontalPosition: 'bottom'  // Tabs Horizontal position: top / bottom
+            effect: 'slidedown',
+            defaultTab: 2,
+            containerWidth: '600px',
+            horizontalPosition: 'bottom'
          });
          $('.tabset8').pwstabs({
-            effect: 'slideleft',       // Transition effect
-            defaultTab: 1,             // Tab opened by default
-            containerWidth: '600px',   // Container width
-            tabsPosition: 'vertical',  // Tabs position: horizontal / vertical
-            verticalPosition: 'left'   // Tabs Vertical position: left / right
+            effect: 'slideleft',
+            defaultTab: 1,
+            containerWidth: '600px',
+            tabsPosition: 'vertical',
+            verticalPosition: 'left'
          });
          $('.tabset9').pwstabs({
-            effect: 'slideright',      // Transition effect
-            defaultTab: 1,             // Tab opened by default
-            containerWidth: '600px',   // Container width
-            tabsPosition: 'vertical',  // Tabs position: horizontal / vertical
-            verticalPosition: 'right'  // Tabs Vertical position: left / right
+            effect: 'slideright',
+            defaultTab: 1,
+            containerWidth: '600px',
+            tabsPosition: 'vertical',
+            verticalPosition: 'right'
          });
          $('.tabset10').pwstabs({
-            effect: 'none',            // Transition effect
-            containerWidth: '600px'    // Container width
+            effect: 'none',
+            containerWidth: '600px'
          });
          $('.tabset11').pwstabs({
-            effect: 'scale',           // Transition effect
-            containerWidth: '600px'    // Container width
+            effect: 'scale',
+            containerWidth: '600px'
+         });
+
+
+         // Colors Demo
+         $('.pws_demo_colors a').click(function (e) {
+            e.preventDefault();
+            $('.pws_tabs_container').removeClass('pws_theme_grey pws_theme_violet pws_theme_green pws_theme_yellow pws_theme_gold pws_theme_orange pws_theme_red pws_theme_purple').addClass('pws_theme_'+$(this).attr('data-demo-color') );
          });
 
       });
@@ -99,13 +99,27 @@
    <div class="content">
       <h2 id="demos">Demos</h2>
 
+      <h3>New Feature - Themes support</h3>
+
+      <div class="pws_demo_colors">
+         <a href="#" data-demo-color="cyan"></a>
+         <a href="#" data-demo-color="violet"></a>
+         <a href="#" data-demo-color="green"></a>
+         <a href="#" data-demo-color="yellow"></a>
+         <a href="#" data-demo-color="gold"></a>
+         <a href="#" data-demo-color="orange"></a>
+         <a href="#" data-demo-color="red"></a>
+         <a href="#" data-demo-color="purple"></a>
+         <a href="#" data-demo-color="grey"></a>
+      </div><!-- pws_demo_colors -->
+
+
       <h3>Default Usage</h3>
 
       <pre><code>$('.tabset0').pwstabs();</code></pre>
 
       <div class="tabset0">
          <div data-pws-tab="tab1" data-pws-tab-name="YouTube and Vimeo" data-pws-tab-icon="fa-video-camera">
-            <!--Cras semper dui non ante mattis blandit. Sed turpis nisi, vehicula a augue a, blandit mollis tellus. Nullam bibendum quam at pulvinar convallis. Donec molestie tempor aliquam. Etiam sed aliquet eros. Nam eleifend, libero at interdum ornare, turpis metus semper justo, quis posuere neque nulla sed lorem. Fusce at consectetur sem, sed varius nibh. Donec ac ipsum pharetra sapien pellentesque porttitor et eget nibh. Pellentesque non nisl varius, pulvinar dolor id, placerat mauris. Suspendisse vestibulum semper magna, sed tristique mi gravida vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras eu consectetur libero, id venenatis nunc. Nullam ullamcorper auctor nulla, rutrum euismod justo auctor id. Aenean velit tellus, suscipit eu pulvinar vitae, placerat non odio.-->
             <span style="margin-right: 16px;"><iframe width="440" height="247" src="https://www.youtube.com/embed/7u2aX7mG2NU?rel=0" frameborder="0" allowfullscreen></iframe></span>
             <span><iframe src="https://player.vimeo.com/video/94502406?title=0&amp;byline=0&amp;portrait=0" width="440" height="247" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></span>
          </div>
@@ -381,7 +395,7 @@
 <pre><code>&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
 
 &lt;link type="text/css" rel="stylesheet" href="jquery.pwstabs.css"&gt;
-&lt;script src="jquery.pwstabs-1.1.0.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="jquery.pwstabs-1.1.5.js"&gt;&lt;/script&gt;</code></pre>
 
 
       <p>2) Create tabbed panels and use HTML5 <strong>data-pws-*</strong> attributes to specify the ID & Name for the tabs.</p>
@@ -411,10 +425,10 @@
    $('.hello_world').pwstabs({
 
       // scale / slideleft / slideright / slidetop / slidedown / none
-      effect: 'scale', 
+      effect: 'scale',
  
       // The tab to be opened by default
-      defaultTab: 1,    
+      defaultTab: 1,
  
       // Set custom container width
       // Any size value (1,2,3.. / px,pt,em,%,cm..)
@@ -428,12 +442,21 @@
 
       // Tabs vertical position: left / right
       verticalPosition: 'left',
- 
+
+      // BETA: Make tabs container responsive: true / false (!!! BETA)
+      responsive: false,
+
+      // Themes available: default: '' / pws_theme_violet / pws_theme_green / pws_theme_yellow / pws_theme_gold /
+      // pws_theme_orange / pws_theme_red / pws_theme_purple / pws_theme_grey
+      theme: '',
+
       // Right to left support: true/ false
       rtl: false
 
-   });        
+   });
 });</code></pre>
+
+
 
       <p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
 
@@ -450,6 +473,8 @@
    &lt;div data-pws-tab="anynameyouwant3" data-pws-tab-name="Tab Title 3" <strong>data-pws-tab-icon="fa-map-marker"</strong>&gt;Our third tab&lt;/div&gt;
 
 &lt;/div&gt;</code></pre>
+
+
 
 
       <h3>Options</h3>
@@ -476,14 +501,14 @@
                <td>1</td>
                <td>Which tab is chosen by default</td>
                <td>Tab ID number starts with 1 (1,2,3..)</td>
-               <td>string</td>
+               <td>number</td>
             </tr>
             <tr>
                <td>containerWidth</td>
                <td>100%</td>
                <td>Tabs container width</td>
                <td>Any size value (1,2,3.. / px,pt,em,%,cm..)</td>
-               <td>number</td>
+               <td>string</td>
             </tr>
             <tr>
                <td>tabsPosition</td>
@@ -507,6 +532,22 @@
                <td>Define Vertical tabs position</td>
                <td>left / right</td>
                <td>string</td>
+            </tr>
+
+            <tr>
+               <td>theme</td>
+               <td>''</td>
+               <td>Change tabs theme</td>
+               <td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey</td>
+               <td>string</td>
+            </tr>
+
+            <tr>
+               <td>responsive</td>
+               <td>false</td>
+               <td>!!BETA!! Make tabs responsive</td>
+               <td>true / false</td>
+               <td>boolean</td>
             </tr>
 
             <tr>

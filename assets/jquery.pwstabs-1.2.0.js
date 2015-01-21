@@ -3,12 +3,11 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.1.4
-  * Version from: 19.01.2015
+  * Version: 1.2.0
+  * Version from: 21.01.2015
   * Licensed under the MIT license
   */
 ;(function ($, window, document, undefined) {
-
 
    var pluginName = "pwstabs",
     defaults = {
@@ -18,9 +17,10 @@
       tabsPosition: 'horizontal',   // Tabs position: horizontal / vertical
       horizontalPosition: 'top',    // Tabs horizontal position: top / bottom
       verticalPosition: 'left',     // Tabs vertical position: left / right
+      responsive: false,             // BETA: Make tabs container responsive: true / false - boolean
+      theme: '',                    // Theme name, you can add your own and define it here. This way you dont have to change default CSS. theme: 'name' - string
       rtl: false                    // Right to left support: true/ false
     };
-
 
 
    function Plugin(element, options) {
@@ -41,44 +41,67 @@
 
          var pwsTabs = this.$elem.children('[data-pws-tab]');
 
-         // Adding class to our selector
+         // Add class to our selector
          this.$elem.addClass('pws_tabs_list');
 
-         // Check if RTL support is true or false
-         var pwsRtlClass = '';
-         if( this.settings.rtl == true ){
-            pwsRtlClass = ' pws_tabs_rtl';
+         // Place selector into container @1.2.0
+         this.$elem.wrap('<div class="pws_tabs_container"></div>');
+
+
+         /**
+         * ##########################################################################################
+         * Check options and add Classes to container if needed. Restructured since @1.2.0
+         * ##########################################################################################
+         */
+
+         // Settings => containerWidth : value
+         if( this.settings.containerWidth !== '100%' ){
+            this.$elem.parent().css( 'width', this.settings.containerWidth );
          }
 
 
-         // Check if Effect is none
-         var pwsNoEffectClass = '';
-         if( this.settings.effect == 'none' ){
-            pwsNoEffectClass = ' pws_tabs_noeffect';
-         }
+         // Settings => tabsPosition: vertical
+         if ( this.settings.tabsPosition == 'vertical' ){
 
+            // Settings => verticalPosition: left
+            if ( this.settings.verticalPosition == 'left' ){
+               this.$elem.parent().addClass('pws_tabs_vertical pws_tabs_vertical_left');
 
-         if ( this.settings.tabsPosition == 'vertical' ){ // Vertical
-            if ( this.settings.verticalPosition == 'left' ){ // Vertical Left
-               positionClass = ' pws_tabs_vertical pws_tabs_vertical_left';
-            } else { // Vertical Right
-               positionClass = ' pws_tabs_vertical pws_tabs_vertical_right';
+            // Settings => verticalPosition: right
+            } else {
+               this.$elem.parent().addClass('pws_tabs_vertical pws_tabs_vertical_right');
             }
-         } else { // Horizontal
+
+         // Settings => tabsPosition: horizontal
+         } else {
+
+            // Settings => horizontalPosition: top
             if ( this.settings.horizontalPosition == 'top' ){ // Horizontal Top
-               positionClass = ' pws_tabs_horizontal pws_tabs_horizontal_top';               
-            } else { // Horizontal Bottom
-               positionClass = ' pws_tabs_horizontal pws_tabs_horizontal_bottom';
+               this.$elem.parent().addClass('pws_tabs_horizontal pws_tabs_horizontal_top');
+
+            // Settings => horizontalPosition: bottom
+            } else {
+               this.$elem.parent().addClass('pws_tabs_horizontal pws_tabs_horizontal_bottom');
             }
          }
 
+         // Settings => rtl : true
+         if( this.settings.rtl == true ){
+            this.$elem.parent().addClass('pws_tabs_rtl');
+         }
 
-         // Put tabs container into another block
-         this.$elem.wrap('<div class="pws_tabs_container'+pwsRtlClass+positionClass+pwsNoEffectClass+'" style="width:' + this.settings.containerWidth + '"></div>');
+         // Settings => effect : none
+         if( this.settings.effect == 'none' ){
+            this.$elem.parent().addClass('pws_tabs_noeffect');
+         }
+
+         // Settings => theme : string
+         if ( this.settings.theme !== '' ){
+            this.$elem.parent().addClass( this.settings.theme );
+         }
 
 
          // Hiding selectors children (Tabs)
-         
          if (this.settings.effect == 'slideleft') {
             $(pwsTabs).addClass('pws_tabs_slide_left_hide');
          } else if (this.settings.effect == 'scale') {
@@ -94,7 +117,6 @@
          } else { // In case something else is in the settings field that is not correct
             $(pwsTabs).addClass('pws_tabs_scale_hide');
          }
-
 
          // Add UL / LI and A control elements to Tabs Container
 
@@ -113,7 +135,6 @@
             }
          }
 
-         
 
          /**
          * #####################################################################
@@ -167,7 +188,6 @@
          }
 
 
-
          /**
          * #############################################
          * Show default Tab
@@ -199,19 +219,16 @@
             }
          }
 
-
          /**
          * #############################################
          * Add active class to default tabs controller
          * #############################################
          */
          this.$elem.parent().find('ul li a[data-tab-id="' + this.$elem.find('[data-pws-tab-id="' + this.settings.defaultTab + '"]').data('pws-tab') + '"]').addClass('pws_tab_active');
-
-
          
          /**
          * #############################################
-         * Check if a Tab controll has icon data
+         * Check if a Tab controll has icon data @1.1.4
          * #############################################
          */
          this.$elem.children('[data-pws-tab-icon]').each(function(){
@@ -220,17 +237,16 @@
             var tabName = $(this).attr('data-pws-tab-name');
             var iconData = $(this).attr('data-pws-tab-icon');
 
+
             if( tabName == '' ){
                $(this).parent().parent().find('ul.pws_tabs_controll li a[data-tab-id="'+tabId+'"]').addClass('pws_tab_noname');
             }
 
             $(this).parent().parent().find('ul.pws_tabs_controll li a[data-tab-id="'+tabId+'"]').prepend('<i class="fa '+iconData+'"></i>');
+
          });
 
-
-
-
-         // First lets find A link and add click function
+         // A controll click function
          this.$elem.parent().find('ul li a').on('click', {pwsOptions : this.settings}, function (e) {
 
             e.preventDefault(); // Prevent use of href attribute
@@ -242,13 +258,12 @@
             $(this).parent().parent().find('a').removeClass('pws_tab_active');   // Remove active class from all A links
             $(this).addClass('pws_tab_active');                                  // Add active class to current A link
 
+            var pwsParent = $(this).parent().parent().parent(); // @1.2.0
+
             // Now lets get current href attribute value
             var tabDataIdValue = $(this).data('tab-id');
-            var currentTab = $(this).parent().parent().parent().find('div[data-pws-tab="' + tabDataIdValue + '"]');
-            var allTabs = $(this).parent().parent().parent().find('[data-pws-tab]');
-
-            var getTabsContainer = $(this).parent().parent().parent().find('.pws_tabs_list');
-
+            var currentTab = pwsParent.find('div[data-pws-tab="' + tabDataIdValue + '"]');
+            var allTabs = pwsParent.find('[data-pws-tab]');
 
             // Now lets make it cooler, and add some effects to tabs container
             if (effect == 'slideleft') {
@@ -278,6 +293,129 @@
             currentTab.parent().height(parseInt(currentTab.height()));
 
          });
+
+
+
+
+         /**
+         * #######################################################################################################################################
+         * CODE TO MAKE TABS RESPONSIVE @1.2.0
+         * #######################################################################################################################################
+         */
+
+         if( this.settings.responsive == true ){
+
+            // Add Responsive class to Tabs container
+            this.$elem.parent().addClass('pws_tabs_responsive');
+
+            // Compare UL Controll width and content width
+            var pwsResponsiveControllsUl = this.$elem.parent().find('ul.pws_tabs_controll');
+               var pwsResponsiveControllLi = pwsResponsiveControllsUl.children('li');
+                  var pwsResponsiveControllA = pwsResponsiveControllLi.children('a');
+
+            var pwsResponsiveContentBlock = this.$elem;
+
+
+            var pwsResponsiveControllsUlWidth = parseInt( pwsResponsiveControllsUl.outerWidth() );
+            var pwsResponsiveContentBlockWidth = parseInt( pwsResponsiveContentBlock.outerWidth() );
+
+
+            // Lets count LI's
+            var pwsResponsiveControllLiCounter = parseInt( pwsResponsiveControllsUl.children('li').length );
+
+            var pwsResponsiveControllLiPercentage = 100 / pwsResponsiveControllLiCounter;
+
+            // Get highest LI
+            var pwsResponsiveControllLiMaxHeight = Math.max.apply(null, pwsResponsiveControllLi.map(function(){
+               return $(this).height();
+            }).get());
+
+
+            $(window).on('resize load', {pluginSettings : this.settings },  function(e){
+
+               var $pluginSettings = e.data.pluginSettings;
+               var tabsPosition = $pluginSettings.tabsPosition;
+               var defaultTab = $pluginSettings.defaultTab;
+               var containerWidth = $pluginSettings.containerWidth;
+
+               // Check window width if less than 60em ( 960px ) then:
+               if( $(window).width() <= 960 ){
+            
+                  // Remove container width style
+                  pwsResponsiveContentBlock.parent().width('');
+
+                  // Add width to LIs
+                  pwsResponsiveControllLi.css( 'width', pwsResponsiveControllLiPercentage +'%' );
+
+                  // Add height to each LIs
+                  $(pwsResponsiveControllA).each(function(){
+                     $(this).height( pwsResponsiveControllLiMaxHeight );
+                  });
+
+                  // If vertical, make it horizontal
+                  if( tabsPosition == 'vertical' ){
+                     pwsResponsiveControllsUl.width('');
+                     pwsResponsiveContentBlock.width('');
+                     pwsResponsiveContentBlock.css('min-height','');
+                     pwsResponsiveContentBlock.height(parseInt(pwsResponsiveContentBlock.find('[data-pws-tab-id="' + defaultTab + '"]').height()));
+                  }
+
+               } if ( $(window).width() <= 600 ){
+                  if( pwsResponsiveContentBlock.parent().find('.pws_responsive_small_menu').length < 1 ){
+                     // Add new button to trigger tabs menu
+                     $('<div class="pws_responsive_small_menu"><a href="#" data-visible="0"><i class="fa fa-bars"></i></a></div>').insertBefore(pwsResponsiveControllsUl);
+                  }
+               
+                  // Add new class to UL controll
+                  pwsResponsiveControllsUl.addClass('pws_tabs_menu_popup');
+               
+                  pwsResponsiveControllA.height('');
+                  pwsResponsiveControllLi.width('');
+               
+                  // Hide popup menu
+                  pwsResponsiveContentBlock.parent().find('ul.pws_tabs_menu_popup').hide();
+
+                  // Popup tabs menu trigger
+                  pwsResponsiveContentBlock.parent().find('.pws_responsive_small_menu a').click(function(e){
+                     e.preventDefault();
+                     // We will add data atribute and check it 0/1
+                     if( $(this).attr('data-visible') == '0' ){
+                        $(this).parent().parent().find('ul.pws_tabs_menu_popup').show();
+                        $(this).attr('data-visible','1');
+                     } else {
+                        $(this).parent().parent().find('ul.pws_tabs_menu_popup').hide();
+                        $(this).attr('data-visible','0');
+                     }
+                  });
+
+                  // Hide menu on tab pick
+                  pwsResponsiveContentBlock.parent().find('ul.pws_tabs_menu_popup li a').on('click', function(e){
+                     e.preventDefault();
+                     $(this).parent().parent().hide();
+                     pwsResponsiveContentBlock.parent().find('.pws_responsive_small_menu a').attr('data-visible','0');
+                  });
+
+               } else if( $(window).width() > 960 ) {
+                  pwsResponsiveContentBlock.parent().css( 'width', containerWidth );
+                  pwsResponsiveControllLi.width('');
+                  pwsResponsiveControllA.height('');
+                  pwsResponsiveContentBlock.parent().find('.pws_responsive_small_menu').remove();
+                  pwsResponsiveControllsUl.removeClass('pws_tabs_menu_popup');
+                  pwsResponsiveControllsUl.show();
+               } else if( $(window).width() > 600 ) {
+                  // Remove 600px screen menu
+                  pwsResponsiveContentBlock.parent().find('.pws_responsive_small_menu').remove();
+                  pwsResponsiveControllsUl.removeClass('pws_tabs_menu_popup');
+                  pwsResponsiveControllsUl.show();
+                  $(pwsResponsiveControllA).on('click', function(e){
+                     e.preventDefault();
+                     $(this).parent().parent().show();
+                  });
+               }
+            });
+
+         } // EOF: IF RESPONSIVE
+
 
       } // Init function END
 
