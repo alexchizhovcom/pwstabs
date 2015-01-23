@@ -191,7 +191,7 @@ jQuery(document).ready(function($){
 ## Changelog
 
 ### Version 1.2.1 (23.01.2015)
-1) To facilitate the creation of new color schemes for developers SASS files added to /assets/sass/ directory
+1) To facilitate the creation of new color schemes for developers SASS files added to /assets/sass/ directory.<br>
 2) Plugins StyleSheet /assets/jquery.pwstabs-1.2.1.css was generated from new SASS files (Very few changes from previous version)
 
 ### Version 1.2.0 (21.01.2015)
