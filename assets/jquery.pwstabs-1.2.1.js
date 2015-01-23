@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.2.0
-  * Version from: 21.01.2015
+  * Version: 1.2.1
+  * Version from: 23.01.2015
   * Licensed under the MIT license
   */
 ;(function ($, window, document, undefined) {

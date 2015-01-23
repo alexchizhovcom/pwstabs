@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.2.0](#version-120-21012015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.2.1](#version-121-23012015)</sup>
 
 ####PWS Tabs is a lightweight jQuery tabs plugin to create responsive flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
@@ -21,7 +21,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 <script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
-<script src="jquery.pwstabs-1.2.0.js"></script>
+<script src="jquery.pwstabs-1.2.1.js"></script>
 ```
 
 2) Create tabbed panels and use HTML5 `data-pws-*` attributes to specify the ID & Name for the tabs.
@@ -189,6 +189,10 @@ jQuery(document).ready(function($){
 
 
 ## Changelog
+
+### Version 1.2.1 (23.01.2015)
+1) To facilitate the creation of new color schemes for developers SASS files added to /assets/sass/ directory
+2) Plugins StyleSheet /assets/jquery.pwstabs-1.2.1.css was generated from new SASS files (Very few changes from previous version)
 
 ### Version 1.2.0 (21.01.2015)
 1) Made plugin responsive.<br>
