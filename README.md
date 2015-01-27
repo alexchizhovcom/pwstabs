@@ -12,6 +12,10 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 ![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabs1.2.0.jpg)
 
+## Install with Bower
+
+`bower install pwstabs`
+
 ## Documentation
 
 ### Getting Started
