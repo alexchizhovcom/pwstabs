@@ -14,7 +14,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 ## Install with Bower
 
-`bower install pwstabs`
+`$ bower install pwstabs`
 
 ## Documentation
 
