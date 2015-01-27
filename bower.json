@@ -1,18 +1,20 @@
 {
   "name": "pwstabs",
   "version": "1.2.1",
-  "description": "PWS Tabs - Responsive flat tabs jQuery Plugin",
-  "main": "assets/jquery.pwstabs-1.2.1",
+  "authors": [
+    "Alex Chizhov <ac@alexchizhov.com>"
+  ],
+  "description": "PWS Tabs jQuery Plugin",
+  "main": "assets/jquery.pwstabs-1.2.1.min.js",
   "moduleType": [
-    "node"
+    "globals"
   ],
   "keywords": [
-    "tabs"
-  ],
-  "authors": [
-    "Alex Chizhov"
+    "tabs",
+    "jquery",
+    "plugin",
+    "responsive"
   ],
   "license": "MIT",
-  "homepage": "http://alexchizhov.com",
-  "private": false
+  "homepage": "http://alexchizhov.com/pwstabs"
 }
