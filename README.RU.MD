@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#version-130-20082015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-130-20082015)</sup>
 
 ####PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
 
