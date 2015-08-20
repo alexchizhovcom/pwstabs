@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.2.1
-  * Version from: 23.01.2015
+  * Version: 1.3.0
+  * Version from: 20.08.2015
   * Licensed under the MIT license
   */
 
@@ -95,6 +95,7 @@ $pws_tabs_bgcolor_active : #fff;
         font-size: 2em;
         text-align: center;
         padding: 3px 0 0 0;
+        cursor:pointer;
         @include boxsizing('border-box');
         &:hover{
           background-color: #{$pws_tabs_bgcolor_hover};
@@ -141,6 +142,8 @@ $pws_tabs_bgcolor_active : #fff;
 
    ul.pws_tabs_controll{
     list-style: none;
+    margin: 0;
+    padding:0;
     li{
       display: inline-block;
       a{
@@ -151,6 +154,7 @@ $pws_tabs_bgcolor_active : #fff;
         text-decoration: none;
         color: #fff;
         margin-right: 3px;
+        cursor:pointer;
         &:hover{
           background-color: #{$pws_tabs_bgcolor_hover};
         }
@@ -291,6 +295,51 @@ $pws_tabs_bgcolor_active : #fff;
 @include theme_flat('purple', '#672e8d','#470871','#fff');
 @include theme_flat('grey',   '#4d4d4f','#000000','#fff');
 
+
+
+
+// PWS Themes Flat Dark
+@mixin theme_flat_dark($name,$defaultColor,$hoverColor, $activeColor){
+  /**
+  * ###########################
+  * #{$name}
+  * ###########################
+  */
+    .pws_tabs_container.pws_tabs_responsive.pws_theme_dark_#{$name} .pws_responsive_small_menu{
+        background-color: #{$defaultColor};
+        a:hover{
+            background-color: #{$hoverColor};
+        }
+    }
+    .pws_tabs_container.pws_theme_dark_#{$name}{
+        .pws_tabs_list{
+            background-color: #{$activeColor}
+        }
+        ul.pws_tabs_controll li a{
+            background-color: #{$defaultColor};
+            &:hover{
+                background-color: #{$hoverColor};
+            }
+            &.pws_tab_active{
+                background-color: #{$activeColor};
+            }
+        }
+    } 
+}
+
+@include theme_flat_dark('violet', '#c72c66','#a6164c','#fafafa');
+@include theme_flat_dark('green',  '#86c447','#539312','#fafafa');
+@include theme_flat_dark('yellow', '#fdb813','#ffa500','#fafafa');
+@include theme_flat_dark('gold',   '#f89827','#fa7b00','#fafafa');
+@include theme_flat_dark('orange', '#f15b42','#fd2e0b','#fafafa');
+@include theme_flat_dark('red',    '#e41937','#d70726','#fafafa');
+@include theme_flat_dark('purple', '#672e8d','#470871','#fafafa');
+@include theme_flat_dark('grey',   '#4d4d4f','#000000','#fafafa');
+@include theme_flat_dark('cyan',   '#9bd7d5','#70c5c2','#fafafa');
+
+
+
+
 /**
   * ######################################################
   * Effect: none
@@ -304,11 +353,14 @@ $pws_tabs_bgcolor_active : #fff;
     @include transition_none;
   }
 }
-.pws_tabs_none_hide{
-  display: none;
-}
-.pws_tabs_none_show{
-  display: block;
+
+.pws_tabs_container.pws_none{
+    .pws_hide{
+        display: none;
+    }
+    .pws_show{
+        display: block;
+    }
 }
 
 /**
@@ -316,15 +368,19 @@ $pws_tabs_bgcolor_active : #fff;
   * Effect: scale
   * ######################################################
   */
-.pws_tabs_scale_hide{
-  @include opacity(0);
-  @include transform('scale(0.9)');
-}
-.pws_tabs_scale_show{
-  z-index: 1;
-  @include opacity(100);
-  @include transform('scale(1)');
-  @include transition_delay('.3s');
+.pws_tabs_container.pws_scale{
+    .pws_hide{
+        @include opacity(0);
+        @include transform('scale(0.9)');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
+    .pws_show{
+        z-index: 1;
+        @include opacity(100);
+        @include transform('scale(1)');
+        @include transition_delay('.3s');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
 }
 
 /**
@@ -332,14 +388,18 @@ $pws_tabs_bgcolor_active : #fff;
   * Effect: slideleft
   * ######################################################
   */
-.pws_tabs_slide_left_hide{
-  @include transform('translateX(-100%)');
-  @include opacity(0);
-}
-.pws_tabs_slide_left_show{
-  @include transform('translateX(0px)');
-  @include opacity(100);
-  @include transition_delay('.3s');
+.pws_tabs_container.pws_slideleft{
+    .pws_hide{
+        @include transform('translateX(-100%)');
+        @include opacity(0);
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
+    .pws_show{
+        @include transform('translateX(0px)');
+        @include opacity(100);
+        @include transition_delay('.3s');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
 }
 
 /**
@@ -347,15 +407,18 @@ $pws_tabs_bgcolor_active : #fff;
   * Effect: slideright
   * ######################################################
   */
-.pws_tabs_slide_right_hide{
-  @include transform('translateX(200%)');
-  @include opacity(0);
-}
-.pws_tabs_slide_right_show{
-  @include transform('translateX(0px)');
-  @include opacity(100);
-  @include transition_delay('.3s');
-
+.pws_tabs_container.pws_slideright{
+    .pws_hide{
+        @include transform('translateX(200%)');
+        @include opacity(0);
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
+    .pws_show{
+        @include transform('translateX(0px)');
+        @include opacity(100);
+        @include transition_delay('.3s');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
 }
 
 /**
@@ -363,14 +426,18 @@ $pws_tabs_bgcolor_active : #fff;
   * Effect: slidetop
   * ######################################################
   */
-.pws_tabs_slide_top_hide{
-  @include transform('translateY(-100%)');
-  @include opacity(0);
-}
-.pws_tabs_slide_top_show{
-  @include transform('translateY(0px)');
-  @include opacity(100);
-  @include transition_delay('.3s');
+.pws_tabs_container.pws_slidetop{
+    .pws_hide{
+        @include transform('translateY(-100%)');
+        @include opacity(0);
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
+    .pws_show{
+        @include transform('translateY(0px)');
+        @include opacity(100);
+        @include transition_delay('.3s');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
 }
 
 /**
@@ -378,12 +445,16 @@ $pws_tabs_bgcolor_active : #fff;
   * Effect: slidedown
   * ######################################################
   */
-.pws_tabs_slide_down_hide{
-  @include transform('translateY(200%)');
-  @include opacity(0);
-}
-.pws_tabs_slide_down_show{
-  @include transform('translateY(0px)');
-  @include opacity(100);
-  @include transition_delay('.3s');
+.pws_tabs_container.pws_slidedown{
+    .pws_hide{
+        @include transform('translateY(200%)');
+        @include opacity(0);
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
+    .pws_show{
+        @include transform('translateY(0px)');
+        @include opacity(100);
+        @include transition_delay('.3s');
+        @include transition('all','.3s','ease-in-out','.3s');
+    }
 }

@@ -2,87 +2,91 @@
 <html lang="en">
 <head>
    <title>PWS Tabs</title>
-   <link type="text/css" rel="stylesheet" href="../assets/jquery.pwstabs-1.2.1.css">
-   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-   <script src="../assets/jquery.pwstabs-1.2.1.js"></script>
-
+   
+   
    <link type="text/css" rel="stylesheet" href="styles.css">
    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+   
+   
+   <link type="text/css" rel="stylesheet" href="../assets/jquery.pwstabs.css">
+   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+   <script src="../assets/jquery.pwstabs.js"></script>
 
-   <link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css">
+   
 
-   <script>
-      jQuery(document).ready(function ($) {
-         $('.tabset0').pwstabs();
-         $('.tabset1').pwstabs({
+   <link type="text/css" rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+
+    <script>
+    jQuery(document).ready(function ($) {
+        $('.tabset0').pwstabs();
+        $('.tabset1').pwstabs({
             effect: 'scale',
             defaultTab: 3,
             containerWidth: '600px'
-         });
-         $('.tabset2').pwstabs({
+        });
+        $('.tabset2').pwstabs({
             effect: 'slideleft',
             defaultTab: 2,
             containerWidth: '600px'
-         });
-         $('.tabset3').pwstabs({
+        });
+        $('.tabset3').pwstabs({
             effect: 'slidetop',
             defaultTab: 3,
             containerWidth: '600px'
-         });
-         $('.tabset4').pwstabs({
+        });
+        $('.tabset4').pwstabs({
             effect: 'slidedown',
             defaultTab: 2,
             containerWidth: '600px'
-         });
-         $('.tabset5').pwstabs({
+        });
+        $('.tabset5').pwstabs({
             effect: 'slideright',
             defaultTab: 1,
             containerWidth: '600px'
-         });
-         $('.tabset6').pwstabs({
+        });
+        $('.tabset6').pwstabs({
             effect: 'slidedown',
             defaultTab: 2,
             containerWidth: '600px',
             rtl: true
-         });
-         $('.tabset7').pwstabs({
+        });
+        $('.tabset7').pwstabs({
             effect: 'slidedown',
             defaultTab: 2,
             containerWidth: '600px',
             horizontalPosition: 'bottom'
-         });
-         $('.tabset8').pwstabs({
+        });
+        $('.tabset8').pwstabs({
             effect: 'slideleft',
             defaultTab: 1,
             containerWidth: '600px',
             tabsPosition: 'vertical',
             verticalPosition: 'left'
-         });
-         $('.tabset9').pwstabs({
+        });
+        $('.tabset9').pwstabs({
             effect: 'slideright',
             defaultTab: 1,
             containerWidth: '600px',
             tabsPosition: 'vertical',
             verticalPosition: 'right'
-         });
-         $('.tabset10').pwstabs({
+        });
+        $('.tabset10').pwstabs({
             effect: 'none',
             containerWidth: '600px'
-         });
-         $('.tabset11').pwstabs({
+        });
+        $('.tabset11').pwstabs({
             effect: 'scale',
             containerWidth: '600px'
-         });
+        });
 
-
-         // Colors Demo
-         $('.pws_demo_colors a').click(function (e) {
+        // Colors Demo
+        $('.pws_demo_colors a').click(function (e) {
             e.preventDefault();
-            $('.pws_tabs_container').removeClass('pws_theme_grey pws_theme_violet pws_theme_green pws_theme_yellow pws_theme_gold pws_theme_orange pws_theme_red pws_theme_purple').addClass('pws_theme_'+$(this).attr('data-demo-color') );
-         });
+            $('.pws_tabs_container').removeClass('pws_theme_cyan pws_theme_grey pws_theme_violet pws_theme_green pws_theme_yellow pws_theme_gold pws_theme_orange pws_theme_red pws_theme_purple pws_theme_dark_cyan pws_theme_dark_grey pws_theme_dark_violet pws_theme_dark_green pws_theme_dark_yellow pws_theme_dark_gold pws_theme_dark_orange pws_theme_dark_red pws_theme_dark_purple').addClass('pws_theme_'+$(this).attr('data-demo-color') );
+        });
 
-      });
-   </script>
+    });
+    </script>
 </head>
 <body>
    <div class="header">
@@ -92,26 +96,43 @@
       <p class="header_buttons">
          <a href="#demos">Demos</a>
          <a href="#docs">Documentation</a>
+         <a href="#opt">Options</a>
          <a href="https://github.com/alexchizhovcom/pwstabs/archive/master.zip">Download</a>
       </p>
    </div><!-- header -->
 
-   <div class="content">
-      <h2 id="demos">Demos</h2>
+    <div class="content">
+        <h2 id="demos">Demos</h2>
 
-      <h3>New Feature - Themes support</h3>
+        <h3>New Feature - Themes support</h3>
 
-      <div class="pws_demo_colors">
-         <a href="#" data-demo-color="cyan"></a>
-         <a href="#" data-demo-color="violet"></a>
-         <a href="#" data-demo-color="green"></a>
-         <a href="#" data-demo-color="yellow"></a>
-         <a href="#" data-demo-color="gold"></a>
-         <a href="#" data-demo-color="orange"></a>
-         <a href="#" data-demo-color="red"></a>
-         <a href="#" data-demo-color="purple"></a>
-         <a href="#" data-demo-color="grey"></a>
-      </div><!-- pws_demo_colors -->
+        <div class="pws_demo_colors">
+            <span class="pws_demo_colors_title">Light flat theme:</span>
+            <span>
+                <a href="#" data-demo-color="cyan"></a>
+                <a href="#" data-demo-color="violet"></a>
+                <a href="#" data-demo-color="green"></a>
+                <a href="#" data-demo-color="yellow"></a>
+                <a href="#" data-demo-color="gold"></a>
+                <a href="#" data-demo-color="orange"></a>
+                <a href="#" data-demo-color="red"></a>
+                <a href="#" data-demo-color="purple"></a>
+                <a href="#" data-demo-color="grey"></a>
+            </span><br><br>
+            
+            <span class="pws_demo_colors_title">Dark flat theme:</span>
+            <span>
+                <a href="#" data-demo-color="dark_cyan"></a>
+                <a href="#" data-demo-color="dark_violet"></a>
+                <a href="#" data-demo-color="dark_green"></a>
+                <a href="#" data-demo-color="dark_yellow"></a>
+                <a href="#" data-demo-color="dark_gold"></a>
+                <a href="#" data-demo-color="dark_orange"></a>
+                <a href="#" data-demo-color="dark_red"></a>
+                <a href="#" data-demo-color="dark_purple"></a>
+                <a href="#" data-demo-color="dark_grey"></a>
+            </span>
+        </div><!-- pws_demo_colors -->
 
 
       <h3>Default Usage</h3>
@@ -395,7 +416,7 @@
 <pre><code>&lt;script src="//code.jquery.com/jquery-1.11.2.min.js"&gt;&lt;/script&gt;
 
 &lt;link type="text/css" rel="stylesheet" href="jquery.pwstabs.css"&gt;
-&lt;script src="jquery.pwstabs-1.2.1.js"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="jquery.pwstabs.js"&gt;&lt;/script&gt;</code></pre>
 
 
       <p>2) Create tabbed panels and use HTML5 <strong>data-pws-*</strong> attributes to specify the ID & Name for the tabs.</p>
@@ -458,11 +479,11 @@
 
 
 
-      <p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
+      <p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.4.0</a></strong></p>
 
       <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
-      <pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css"&gt;</code></pre>
+      <pre><code>&lt;link type="text/css" rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css"&gt;</code></pre>
 
       <p>5.2) Use HTML5 <strong>data-pws-tab-icon</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
 
@@ -477,7 +498,7 @@
 
 
 
-      <h3>Options</h3>
+      <h3 id="opt">Options</h3>
       <table>
          <thead>
             <tr>
@@ -538,7 +559,10 @@
                <td>theme</td>
                <td>''</td>
                <td>Change tabs theme</td>
-               <td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey</td>
+               <td>
+                   pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey<br>
+                   pws_theme_dark_violet / pws_theme_dark_green<br> pws_theme_dark_yellow / pws_theme_dark_gold<br> pws_theme_dark_orange / pws_theme_dark_red<br> pws_theme_dark_purple / pws_theme_dark_grey
+               </td>
                <td>string</td>
             </tr>
 
@@ -559,6 +583,7 @@
             </tr>
          </tbody>
       </table>
+      
    </div><!-- content -->
    <div class="footer">&copy; 2015 - <a href="http://alexchizhov.com" target="_blank">Alex Chizhov</a></div><!-- footer -->
 </body>
