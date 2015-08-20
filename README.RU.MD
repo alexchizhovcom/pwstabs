@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.2.1](#version-121-23012015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#version-130-20082015)</sup>
 
 ####PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
 
@@ -26,7 +26,7 @@
 <script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
-<script src="jquery.pwstabs-1.2.1.js"></script>
+<script src="jquery.pwstabs.js"></script>
 ```
 
 2) Создайте вкладки используя HTML5 `data-pws-*` атрибут, чтобы указать ID и Название вкладок.
@@ -95,12 +95,12 @@ jQuery(document).ready(function($){
 });
 ```
 
-<p>5) PWS Tabs Plugin поддерживает <strong><a href="http://fortawesome.github.io/" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.2.0</a></strong></p>
+<p>5) PWS Tabs Plugin поддерживает <strong><a href="http://fortawesome.github.io/" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.4.0</a></strong></p>
 
 <p>5.1) Подключите таблицы стилей Font Awesome из директории /assets:</p>
 
 ```html
-<link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 ```
 
 <p>5.2) Используйте HTML5 <strong><code>data-pws-tab-icon</code></strong> атрибут, чтобы установить иконку. Названия иконок можно посмотреть здесь: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
@@ -175,7 +175,7 @@ jQuery(document).ready(function($){
 <td>theme</td>
 <td>''</td>
 <td>Изменить тему оформления вкладок</td>
-<td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey</td>
+<td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey<br>pws_theme_dark_violet / pws_theme_dark_green<br> pws_theme_dark_yellow / pws_theme_dark_gold<br> pws_theme_dark_orange / pws_theme_dark_red<br> pws_theme_dark_purple / pws_theme_dark_grey</td>
 <td>строка</td>
 </tr>
 <tr>
@@ -197,6 +197,17 @@ jQuery(document).ready(function($){
 
 
 ## История изменений
+
+### Версия 1.3.0 (20.08.2015)
+1) Основные CSS и JS файлы больше не включают номер версии в названии<br>
+2) Код почищен и переработан<br>
+3) Вкладки теперь имеют короткие классы pws_show и pws_hide взамен старых с названием эффекта<br>
+4) Классы стилей теперь применяются к контейнеру, а не вкладкам<br>
+5) Новая темная тема для сайтов с белым фоном<br>
+6) Исправлена ширина вертикальных вкладок с иконками<br>
+7) Исправлены отступы вкладок<br>
+8) Папка Font awesome переименована в /font-awesome/<br>
+9) Font awesome обновлен до версии 4.4.0
 
 ### Версия 1.2.1 (23.01.2015)
 1) Чтобы упростить работу со стилями плагина, добавлены SASS файлы в директорию /assets/sass/.<br>

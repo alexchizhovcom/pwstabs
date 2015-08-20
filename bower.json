@@ -1,11 +1,11 @@
 {
   "name": "pwstabs",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "authors": [
     "Alex Chizhov <ac@alexchizhov.com>"
   ],
   "description": "PWS Tabs jQuery Plugin",
-  "main": "assets/jquery.pwstabs-1.2.1.min.js",
+  "main": "assets/jquery.pwstabs.min.js",
   "moduleType": [
     "globals"
   ],

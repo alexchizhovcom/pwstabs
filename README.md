@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.2.1](#version-121-23012015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#version-130-20082015)</sup>
 
 ####PWS Tabs is a lightweight jQuery tabs plugin to create responsive flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
@@ -12,10 +12,6 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 ![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabs1.2.0.jpg)
 
-## Install with Bower
-
-`$ bower install pwstabs`
-
 ## Documentation
 
 ### Getting Started
@@ -25,7 +21,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 <script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
-<script src="jquery.pwstabs-1.2.1.js"></script>
+<script src="jquery.pwstabs.js"></script>
 ```
 
 2) Create tabbed panels and use HTML5 `data-pws-*` attributes to specify the ID & Name for the tabs.
@@ -91,12 +87,12 @@ jQuery(document).ready(function($){
 ```
 
 
-<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.2.0</a></strong></p>
+<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.4.0</a></strong></p>
 
 <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
 ```html
-<link type="text/css" rel="stylesheet" href="../assets/font-awesome-4.2.0/css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 ```
 
 <p>5.2) Use HTML5 <strong>`data-pws-tab-icon`</strong> attribute to set an icon. Icon names you can find here: <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a>.</p>
@@ -171,7 +167,7 @@ jQuery(document).ready(function($){
 <td>theme</td>
 <td>''</td>
 <td>Change tabs theme</td>
-<td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey</td>
+<td>pws_theme_violet / pws_theme_green<br> pws_theme_yellow / pws_theme_gold<br> pws_theme_orange / pws_theme_red<br> pws_theme_purple / pws_theme_grey<br>pws_theme_dark_violet / pws_theme_dark_green<br> pws_theme_dark_yellow / pws_theme_dark_gold<br> pws_theme_dark_orange / pws_theme_dark_red<br> pws_theme_dark_purple / pws_theme_dark_grey</td>
 <td>string</td>
 </tr>
 <tr>
@@ -193,6 +189,17 @@ jQuery(document).ready(function($){
 
 
 ## Changelog
+
+### Version 1.3.0 (20.08.2015)
+1) Main CSS and JS file doesn't have verison number in its name now<br>
+2) Code refactored and cleaned<br>
+3) Tabs now have pws_show & pws_hide classes instead of a long named classes<br>
+4) Styles classes are now added to the container not tabs<br>
+5) New dark themes added, they are a little bit darker than white to use on a websites with white background<br>
+6) Fixed vertical tabs width with icons<br>
+7) Fixed margins and paddings for tabs controlls<br>
+8) Font awesome folder renamed to /font-awesome/<br>
+9) Font awesome is version 4.4.0 now
 
 ### Version 1.2.1 (23.01.2015)
 1) To facilitate the creation of new color schemes for developers SASS files added to /assets/sass/ directory.<br>
