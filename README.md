@@ -1,16 +1,23 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#version-130-20082015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.4.0](#version-140-06032016)</sup>
 
 ####PWS Tabs is a lightweight jQuery tabs plugin to create responsive flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
-####PWS TABS is now Responsive!
-This feature is still beta, please, help me test it and find possible issues.
-![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
+## Nested tabs<sup>new feature</sup>
+PWS Tabs jQuery Plugin supports multilevel nested tabs. You can add unlimited tabs inside of tabs with custom settings.
+
+##PWS Tabs is Responsive
+
+![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
+
+## Install with Bower
+
+`$ bower install pwstabs`
 
 ## Demo
 
 Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
-![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabs1.2.0.jpg)
+![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabs1.2.0.jpg)
 
 ## Documentation
 
@@ -18,7 +25,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 1) Include jQuery library and jQuery PWS Tabs plugin in the <strong>`<head>`</strong> section.
 ```html
-<script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
 <script src="jquery.pwstabs.js"></script>
@@ -87,7 +94,7 @@ jQuery(document).ready(function($){
 ```
 
 
-<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.4.0</a></strong></p>
+<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.5.0</a></strong></p>
 
 <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
@@ -189,6 +196,13 @@ jQuery(document).ready(function($){
 
 
 ## Changelog
+
+### Version 1.4.0 (06.03.2016)
+1) Nested tabs feature added<br>
+2) iPhone tabs font-size issue fixed<br>
+3) Tabs positioning changed from absolute to relative<br>
+4) Container height is now handled with CSS not jQuery<br>
+5) Font awesome is version 4.5.0 now
 
 ### Version 1.3.0 (20.08.2015)
 1) Main CSS and JS file doesn't have verison number in its name now<br>

@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.3.0
-  * Version from: 20.08.2015
+  * Version: 1.4.0
+  * Version from: 06.03.2016
   * Licensed under the MIT license
   */
 
@@ -16,7 +16,10 @@ $pws_tabs_bgcolor_default : #9bd7d5;
 $pws_tabs_bgcolor_hover : #70c5c2;
 $pws_tabs_bgcolor_active : #fff;
 
-
+.pws_tabs_container,
+.pws_tabs_controll a{
+    font-size:16px;
+}
 
 @media only screen and (max-width: 60em){ // 960px
    
@@ -139,6 +142,7 @@ $pws_tabs_bgcolor_active : #fff;
 
 .pws_tabs_container{
    width: 100%;
+   box-sizing:border-box;
 
    ul.pws_tabs_controll{
     list-style: none;
@@ -188,10 +192,13 @@ $pws_tabs_bgcolor_active : #fff;
   position: relative;
 }
 .pws_tab_single{
-  position: absolute;
-  top: 20px;
-  padding-right: 20px;
-  padding-right: 1.25em; // @1.2.0
+  /*position: absolute;*/
+  /*top: 20px;*/
+  /*padding-right: 20px;*/
+  /*padding-right: 1.25em; // @1.2.0*/
+  
+  display:block;
+  
   @include transition('all','.3s','ease-in-out','.0');
 }
 
@@ -213,9 +220,9 @@ $pws_tabs_bgcolor_active : #fff;
     }
   }
   .pws_tab_single{
-    padding-right: 0;
-    padding-left: 20px;
-    padding-left: 1.25em; // @1.2.0
+    /*padding-right: 0;*/
+    /*padding-left: 20px;*/
+    /*padding-left: 1.25em; // @1.2.0*/
   }
 } // EOF : pws_tabs_rtl
 
@@ -233,7 +240,7 @@ $pws_tabs_bgcolor_active : #fff;
     @include clear;
   }
 
-  ul.pws_tabs_controll{
+  & > ul.pws_tabs_controll{
     width: auto;
     position: relative;
     float: left;
@@ -247,7 +254,7 @@ $pws_tabs_bgcolor_active : #fff;
     }
   }
 
-  .pws_tabs_list{
+  & > .pws_tabs_list{
     position: relative;
     float: left;
   }

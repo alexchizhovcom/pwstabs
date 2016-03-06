@@ -1,21 +1,22 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.3.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-130-20082015)</sup>
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.4.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-140-06032016)</sup>
 
 ####PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
 
-####PWS TABS теперь адаптивный!
-Адаптивность плагина находится в режиме Бета, пожалуйста, помогите протестировать, чтобы найти все возможные недочеты.<br>
-![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
+## Вложенные вкладки<sup>новаяя возможность</sup>
+PWS Tabs jQuery Plugin поддерживает вложенные вкладно неограниченной глубины. Вы можете добавлять неограниченное количество вкладок внутрь вкладок.
 
-## Демо
-
-Онлайн демо(английский): [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
-
-![Preview](http://alexchizhov.com/files/themes/ac/page-templates/pwstabs/screenshots/pwstabs1.2.0.jpg)
+##PWS Tabs адаптивный!
+![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
 
 ## Установка с Bower
 
 `$ bower install pwstabs`
 
+## Демо
+
+Онлайн демо(английский): [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
+
+![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabs1.2.0.jpg)
 
 ## Документация
 
@@ -23,7 +24,7 @@
 
 1) Подключите jQuery библиотеку и jQuery PWS Tabs плагин внутри <strong>`<head>`</strong> секции.
 ```html
-<script src="//code.jquery.com/jquery-1.11.2.min.js"</script>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"</script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
 <script src="jquery.pwstabs.js"></script>
@@ -95,7 +96,7 @@ jQuery(document).ready(function($){
 });
 ```
 
-<p>5) PWS Tabs Plugin поддерживает <strong><a href="http://fortawesome.github.io/" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.4.0</a></strong></p>
+<p>5) PWS Tabs Plugin поддерживает <strong><a href="http://fortawesome.github.io/" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.5.0</a></strong></p>
 
 <p>5.1) Подключите таблицы стилей Font Awesome из директории /assets:</p>
 
@@ -197,6 +198,13 @@ jQuery(document).ready(function($){
 
 
 ## История изменений
+
+### Версия 1.4.0 (06.03.2016)
+1) Вложенные вкладки - новая возможность<br>
+2) Прыгающий шрифт вкладок на iPhone исправлен<br>
+3) Позиционирование вкладок изменено с absolute на relative<br>
+4) Высота контейнера теперь контролируется CSS, а не jQuery<br>
+5) Font awesome обновлен до версии 4.5.0
 
 ### Версия 1.3.0 (20.08.2015)
 1) Основные CSS и JS файлы больше не включают номер версии в названии<br>
