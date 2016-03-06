@@ -6,3 +6,4 @@ package.json
 assets/jquery.pwstabs.old.css
 assets/jquery.css.map
 assets/sass/jquery.pwstabs.scss.map
+.sass-cache
