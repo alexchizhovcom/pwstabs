@@ -5,7 +5,7 @@
         "Alex Chizhov <ac@alexchizhov.com>"
     ],
     "description": "PWS Tabs jQuery Plugin",
-    "main": "assets/jquery.pwstabs.min.js",
+    "main": "assets/jquery.pwstabs.js",
     "moduleType": [
         "globals"
     ],
