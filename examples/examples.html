@@ -17,13 +17,30 @@
         <link type="text/css" rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
 
         <script>
-            jQuery(document).ready(function ($) {
-                $('.tabset0').pwstabs();
+            jQuery(function ($) {
+                var tabset0 = $('.tabset0').pwstabs({
+                    onBeforeInit: function()
+                    {
+                        console.log('before init');
+                    },
+                    onAfterInit: function()
+                    {
+                        console.log('after init');
+                    }
+                });
+                
+                console.log(tabset0);
+                
+                $('.tabset0').pwstabs('options', 'effect', 'slidedown');
+                
                 
                 $('.tabsetnested1').pwstabs({
                     tabsPosition: 'vertical',
+                    effect: 'scale'
                 });
-                $('.tabsetnested2').pwstabs();
+                $('.tabsetnested2').pwstabs({
+                    effect: 'slidetop'
+                });
                 
                 $('.tabset1').pwstabs({
                     effect: 'scale',

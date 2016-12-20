@@ -3,8 +3,8 @@
   * Author: Alex Chizhov
   * Author Website: http://alexchizhov.com/pwstabs
   * GitHub: https://github.com/alexchizhovcom/pwstabs
-  * Version: 1.4.0
-  * Version from: 06.03.2016
+  * Version: 1.5.0
+  * Version from: 20.12.2016
   * Licensed under the MIT license
   */
 .pws_tabs_container,
@@ -88,7 +88,7 @@
     background-color: #70c5c2;
   }
   .pws_tabs_container.pws_tabs_responsive ul.pws_tabs_controll.pws_tabs_menu_popup {
-    display: block;
+    display: none;
     position: absolute;
     overflow: hidden;
     top: 40px;
@@ -99,6 +99,9 @@
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+  }
+  .pws_tabs_container.pws_tabs_responsive ul.pws_tabs_controll.pws_tabs_menu_popup.show {
+    display: block;
   }
   .pws_tabs_container.pws_tabs_responsive ul.pws_tabs_controll.pws_tabs_menu_popup li {
     display: block;
@@ -150,7 +153,7 @@
   margin-left: 0;
 }
 .pws_tabs_container ul.pws_tabs_controll li a.pws_tab_active {
-  background-color: white;
+  background-color: #fff;
   color: #505050;
 }
 
@@ -165,7 +168,6 @@
   -moz-box-sizing: border-box;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
   overflow: hidden;
   position: relative;
@@ -179,7 +181,6 @@
   display: block;
   -webkit-transition: all .3s ease-in-out .0;
   -moz-transition: all .3s ease-in-out .0;
-  -o-transition: all .3s ease-in-out .0;
   transition: all .3s ease-in-out .0;
 }
 
@@ -652,13 +653,11 @@
 .pws_tabs_noeffect .pws_tabs_list {
   -webkit-transition: all .1s ease-in-out 0;
   -moz-transition: all .1s ease-in-out 0;
-  -o-transition: all .1s ease-in-out 0;
   transition: all .1s ease-in-out 0;
 }
 .pws_tabs_noeffect .pws_tab_single {
   -webkit-transition: none;
   -moz-transition: none;
-  -o-transition: none;
   transition: none;
 }
 
@@ -674,37 +673,32 @@
   * Effect: scale
   * ######################################################
   */
-.pws_tabs_container.pws_scale .pws_hide {
+.pws_tabs_container.pws_scale > .pws_tabs_list > .pws_hide {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   opacity: 0;
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
-  -o-transform: scale(0.9);
   -ms-transform: scale(0.9);
   transform: scale(0.9);
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
-.pws_tabs_container.pws_scale .pws_show {
+.pws_tabs_container.pws_scale > .pws_tabs_list > .pws_show {
   z-index: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   opacity: 1;
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
-  -o-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
   transition-delay: .3s;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
 
@@ -713,10 +707,9 @@
   * Effect: slideleft
   * ######################################################
   */
-.pws_tabs_container.pws_slideleft .pws_hide {
+.pws_tabs_container.pws_slideleft > .pws_tabs_list > .pws_hide {
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -724,13 +717,11 @@
   opacity: 0;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
-.pws_tabs_container.pws_slideleft .pws_show {
+.pws_tabs_container.pws_slideleft > .pws_tabs_list > .pws_show {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
-  -o-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -738,11 +729,9 @@
   opacity: 1;
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
   transition-delay: .3s;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
 
@@ -751,10 +740,9 @@
   * Effect: slideright
   * ######################################################
   */
-.pws_tabs_container.pws_slideright .pws_hide {
+.pws_tabs_container.pws_slideright > .pws_tabs_list > .pws_hide {
   -webkit-transform: translateX(200%);
   -moz-transform: translateX(200%);
-  -o-transform: translateX(200%);
   -ms-transform: translateX(200%);
   transform: translateX(200%);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -762,13 +750,11 @@
   opacity: 0;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
-.pws_tabs_container.pws_slideright .pws_show {
+.pws_tabs_container.pws_slideright > .pws_tabs_list > .pws_show {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
-  -o-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -776,11 +762,9 @@
   opacity: 1;
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
   transition-delay: .3s;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
 
@@ -789,10 +773,9 @@
   * Effect: slidetop
   * ######################################################
   */
-.pws_tabs_container.pws_slidetop .pws_hide {
+.pws_tabs_container.pws_slidetop > .pws_tabs_list > .pws_hide {
   -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -800,13 +783,11 @@
   opacity: 0;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
-.pws_tabs_container.pws_slidetop .pws_show {
+.pws_tabs_container.pws_slidetop > .pws_tabs_list > .pws_show {
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
-  -o-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -814,11 +795,9 @@
   opacity: 1;
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
   transition-delay: .3s;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
 
@@ -827,10 +806,9 @@
   * Effect: slidedown
   * ######################################################
   */
-.pws_tabs_container.pws_slidedown .pws_hide {
+.pws_tabs_container.pws_slidedown > .pws_tabs_list > .pws_hide {
   -webkit-transform: translateY(200%);
   -moz-transform: translateY(200%);
-  -o-transform: translateY(200%);
   -ms-transform: translateY(200%);
   transform: translateY(200%);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -838,13 +816,11 @@
   opacity: 0;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
-.pws_tabs_container.pws_slidedown .pws_show {
+.pws_tabs_container.pws_slidedown > .pws_tabs_list > .pws_show {
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
-  -o-transform: translateY(0px);
   -ms-transform: translateY(0px);
   transform: translateY(0px);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -852,10 +828,8 @@
   opacity: 1;
   -webkit-transition-delay: .3s;
   -moz-transition-delay: .3s;
-  -o-transition-delay: .3s;
   transition-delay: .3s;
   -webkit-transition: all .3s ease-in-out .3s;
   -moz-transition: all .3s ease-in-out .3s;
-  -o-transition: all .3s ease-in-out .3s;
   transition: all .3s ease-in-out .3s;
 }
