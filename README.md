@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.4.0](#version-140-06032016)</sup> [![Build Status](https://travis-ci.org/alexchizhovcom/pwstabs.svg?branch=master)](https://travis-ci.org/alexchizhovcom/pwstabs)
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.5.0](#version-150-20122016)</sup> [![Build Status](https://travis-ci.org/alexchizhovcom/pwstabs.svg?branch=master)](https://travis-ci.org/alexchizhovcom/pwstabs)
 
 ####PWS Tabs is a lightweight jQuery tabs plugin to create responsive flat style tabbed content panels with some cool transition effects powered by CSS3 animations.
 
@@ -25,7 +25,7 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 1) Include jQuery library and jQuery PWS Tabs plugin in the <strong>`<head>`</strong> section.
 ```html
-<script src="https://code.jquery.com/jquery-1.12.1.min.js"</script>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
 <script src="jquery.pwstabs.js"></script>
@@ -50,14 +50,14 @@ Online demo: [http://alexchizhov.com/pwstabs](http://alexchizhov.com/pwstabs)
 
 3) Call the plugin on the parent element to create a basic tabs interface with 100% width and 'scale' transition effect.
 ```js
-jQuery(document).ready(function($){
+jQuery(function($){
    $('.hello_world').pwstabs();
 });
 ```
 
 4) Available parameters to customize the tabs plugin.
 ```js
-jQuery(document).ready(function($){
+jQuery(function($){
    $('.hello_world').pwstabs({
 
       // scale / slideleft / slideright / slidetop / slidedown / none
@@ -87,7 +87,25 @@ jQuery(document).ready(function($){
       theme: '',
       
       // Right to left support: true/ false
-      rtl: false
+      rtl: false,
+      
+      // Before first init callback function
+      onBeforeFirstInit: function() {},
+      
+      // After first init callback function
+      onAfterFirstInit: function() {},
+      
+      // Before init callback function
+      onBeforeInit: function() {},
+      
+      // After init callback function
+      onAfterInit: function() {},
+      
+      // Before tab change callback function
+      onBeforeChange: function() {},
+      
+      // After tab change callback function
+      onAfterChange: function() {}
 
    });        
 });
@@ -180,7 +198,7 @@ jQuery(document).ready(function($){
 <tr>
 <td>responsive</td>
 <td>false</td>
-<td>!!BETA!! Make tabs responsive</td>
+<td>Make tabs responsive</td>
 <td>true / false</td>
 <td>boolean</td>
 </tr>
@@ -194,8 +212,185 @@ jQuery(document).ready(function($){
 </tbody>
 </table>
 
+## Methods
+
+Since version 1.5.0 methods are available for PWS Tabs jQuery Plugin.
+
+### destroy()
+Destroys plugin. Use the following code to call the method:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   $('.hello_world').pwstabs('destroy');
+});
+```
+
+### addTab()
+Add tab dynamically, for example on button click:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('addTab', {
+         id: 'tab4',
+         name: 'Tab name',
+         icon: 'fa-phone',
+         content: 'This is the content for tab number four'
+      });
+   });
+      
+});
+```
+As you can see the method accepts 4 parameteres:<br>
+<strong>id</strong> - the ID of the tab (same as `data-pws-tab`)<br>
+<strong>name</strong> - the name of the tab (same as `data-pws-tab-name`)<br>
+<strong>icon</strong> - FontAwesome icon name (same as `data-pws-tab-icon`)<br>
+<strong>content</strong> - the new tabs content
+
+### removeTab()
+Remove tab dynamically, for example on button click:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('removeTab', 2);
+   });
+      
+});
+```
+The second tab will be removed. If the active tab is being removed, then the first tab will be chosen as active.
+
+### setOption()
+You can update options dynamically, after the option is updated the plugin is being rebuild. Use the following code to update the options:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('effect', 'scrolldown');
+      $('.hello_world').pwstabs('defaultTab', 3);
+   });
+      
+});
+```
+Place the name of the option as the first argument and the value you want to change to as the second argument.
+
+### rebuild()
+Rebuilds the plugin. Triggers `destroy()` and `init()` methods.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('rebuild');
+   });
+      
+});
+```
+
+## Hooks
+Since version 1.5.0 the hooks are available.
+
+### onBeforeFirstInit()
+Is triggered before `init()` function for the first time the plugin is being initialized.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeFirstInit: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+### onAfterFirstInit()
+Is triggered after `init()` function for the first time the plugin is being initialized.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterFirstInit: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+### onBeforeInit()
+Is triggered before `init()` function every time the plugin is being initialized or rebuild.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeInit: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+### onAfterInit()
+Is triggered after `init()` function every time the plugin is being initialized or rebuild.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterInit: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+### onBeforeChange()
+Is triggered before the tab is being changed.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeChange: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+### onAfterChange()
+Is triggered after the tab is being changed.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterChange: function()
+      {
+         // Your code
+      }
+   });
+});
+```
+
+
 
 ## Changelog
+
+### Version 1.5.0 (20.12.2016)
+1) New hooks:<br>
+onBeforeFirstInit()<br>
+onAfterFirstInit()<br>
+onBeforeInit()<br>
+onAfterInit()<br>
+onBeforeChange()<br>
+onAfterChange()<br>
+2) New methods:<br>
+destroy()<br>
+addTab()<br>
+removeTab()<br>
+setOption()<br>
+rebuild()<br>
+3) Fixed effects for nested tabs<br>
+4) Fixed responsive popup menu issue
 
 ### Version 1.4.0 (06.03.2016)
 1) Nested tabs feature added<br>
