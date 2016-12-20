@@ -1,4 +1,4 @@
-# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.4.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-140-06032016)</sup> [![Build Status](https://travis-ci.org/alexchizhovcom/pwstabs.svg?branch=master)](https://travis-ci.org/alexchizhovcom/pwstabs)
+# [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.5.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-150-20122016)</sup> [![Build Status](https://travis-ci.org/alexchizhovcom/pwstabs.svg?branch=master)](https://travis-ci.org/alexchizhovcom/pwstabs)
 
 ####PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
 
@@ -24,7 +24,7 @@ PWS Tabs jQuery Plugin поддерживает вложенные вкладн�
 
 1) Подключите jQuery библиотеку и jQuery PWS Tabs плагин внутри <strong>`<head>`</strong> секции.
 ```html
-<script src="https://code.jquery.com/jquery-1.12.1.min.js"</script>
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
 
 <link type="text/css" rel="stylesheet" href="jquery.pwstabs.css">
 <script src="jquery.pwstabs.js"></script>
@@ -47,14 +47,14 @@ PWS Tabs jQuery Plugin поддерживает вложенные вкладн�
 
 3) Вызовете плагин на родительском элементе относительно вкладок со 100% шириной и эффектом 'scale'.
 ```js
-jQuery(document).ready(function($){
+jQuery(function($){
    $('.hello_world').pwstabs();
 });
 ```
 
 4) Доступные параметры для настройки плагина.
 ```js
-jQuery(document).ready(function($){
+jQuery(function($){
    $('.hello_world').pwstabs({
 
       // scale / slideleft / slideright / slidetop / slidedown / none
@@ -90,7 +90,25 @@ jQuery(document).ready(function($){
       theme: '',
       
       // Поддержка для языков читаемых справа налево (RTL): true / false
-      rtl: false
+      rtl: false,
+      
+      // callback функция перед первой инициализацией плагина
+      onBeforeFirstInit: function() {},
+      
+      // callback функция после первой инициализации плагина
+      onAfterFirstInit: function() {},
+      
+      // callback функция перед инициализацией плагина
+      onBeforeInit: function() {},
+      
+      // callback функция после инициализации плагина
+      onAfterInit: function() {},
+      
+      // callback функция перед сменой вкладки
+      onBeforeChange: function() {},
+      
+      // callback функция после смены вкладки
+      onAfterChange: function() {}
 
    });
 });
@@ -115,7 +133,6 @@ jQuery(document).ready(function($){
 
 </div>
 ```
-
 
 ## Настройки
 
@@ -197,7 +214,184 @@ jQuery(document).ready(function($){
 </table>
 
 
+## Методы
+
+Начиная с версии 1.5.0 методы доступны для PWS Tabs jQuery Plugin.
+
+### destroy()
+Уничтожает плагин. Используйте следующий код для вызова метода:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   $('.hello_world').pwstabs('destroy');
+});
+```
+
+### addTab()
+Повзоляет динамически добавлять вкладки, например при нажатии на кнопку:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('addTab', {
+         id: 'tab4',
+         name: 'Название вкладки',
+         icon: 'fa-phone',
+         content: 'Содержимое четвертой вкладки'
+      });
+   });
+      
+});
+```
+Метод принимает 4 параметра:<br>
+<strong>id</strong> - идентификатор вкладки (тоже самое что и `data-pws-tab`)<br>
+<strong>name</strong> - заголовок вкладки (тоже самое что и `data-pws-tab-name`)<br>
+<strong>icon</strong> - название иконки FontAwesome (тоже самое что и `data-pws-tab-icon`)<br>
+<strong>content</strong> - содержимое новой вкладки
+
+### removeTab()
+Позволяет динамически удалять вкладки, например при нажатии на кнопку:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('removeTab', 2);
+   });
+      
+});
+```
+Вторая вкладка будет удалена. Если удаляемая вкладка является активной, то будет автоматически выбрана первая вкладка как активная.
+
+### setOption()
+Вы можете динамически обновлять настройки плагина, после изменения настроек плагин перестраивается. Используйте следующий код для динамического обновления настроек:
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('effect', 'scrolldown');
+      $('.hello_world').pwstabs('defaultTab', 3);
+   });
+      
+});
+```
+Первый аргумент - название настройки, второй аргумент - значение.
+
+### rebuild()
+Перестраивает плагин. Вызывает поочередно методы `destroy()` и `init()`.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs();
+   
+   $('.button').on('click', function(){
+      $('.hello_world').pwstabs('rebuild');
+   });
+      
+});
+```
+
+## Хуки (callback функции)
+С версии 1.5.0 стали доступны хуки (callback функции).
+
+### onBeforeFirstInit()
+Вызывается перед методом `init()` только в первый раз инициализации плагина.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeFirstInit: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+### onAfterFirstInit()
+Вызывается после метода `init()` только в первый раз инициализации плагина.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterFirstInit: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+### onBeforeInit()
+Вызывается перед методом `init()` каждый раз при инициализации и перестройке плагина.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeInit: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+### onAfterInit()
+Вызывается после метода `init()` каждый раз при инициализации и перестройке плагина.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterInit: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+### onBeforeChange()
+Вызывается перед сменой вкладки.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onBeforeChange: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+### onAfterChange()
+Вызывается после смены вкладки.
+```js
+jQuery(function($){
+   $('.hello_world').pwstabs({
+      onAfterChange: function()
+      {
+         // Ваш код
+      }
+   });
+});
+```
+
+
 ## История изменений
+
+### Версия 1.5.0 (20.12.2016)
+1) Новые callback функции:<br>
+onBeforeFirstInit()<br>
+onAfterFirstInit()<br>
+onBeforeInit()<br>
+onAfterInit()<br>
+onBeforeChange()<br>
+onAfterChange()<br>
+2) Новый методы:<br>
+destroy()<br>
+addTab()<br>
+removeTab()<br>
+setOption()<br>
+rebuild()<br>
+3) Исправлена ошибка эффектов вложенных вкладок<br>
+4) Исправлена ошибка всплывающего адаптивного меню вкладок
 
 ### Версия 1.4.0 (06.03.2016)
 1) Вложенные вкладки - новая возможность<br>
