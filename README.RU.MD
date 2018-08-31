@@ -1,6 +1,6 @@
 # [PWS Tabs jQuery Plugin](http://alexchizhov.com/pwstabs)<sup>[1.5.0](#%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-150-20122016)</sup> [![Build Status](https://travis-ci.org/alexchizhovcom/pwstabs.svg?branch=master)](https://travis-ci.org/alexchizhovcom/pwstabs)
 
-####PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
+#### PWS Tabs адаптивный, функциональный jQuery плагин, с интересными эффектами переключения вкладок выполненных с CSS3.
 
 ## Вложенные вкладки<sup>новаяя возможность</sup>
 PWS Tabs jQuery Plugin поддерживает вложенные вкладно неограниченной глубины. Вы можете добавлять неограниченное количество вкладок внутрь вкладок.
@@ -114,7 +114,7 @@ jQuery(function($){
 });
 ```
 
-<p>5) PWS Tabs Plugin поддерживает <strong><a href="http://fortawesome.github.io/" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.5.0</a></strong></p>
+<p>5) PWS Tabs Plugin поддерживает <strong><a href="https://github.com/FortAwesome/Font-Awesome" title="Перейти на сайт Font Awesome" target="_blank">Font Awesome 4.5.0</a></strong></p>
 
 <p>5.1) Подключите таблицы стилей Font Awesome из директории /assets:</p>
 
