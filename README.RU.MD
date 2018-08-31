@@ -5,7 +5,7 @@
 ## Вложенные вкладки<sup>новая возможность</sup>
 PWS Tabs jQuery Plugin поддерживает вложенные вкладно неограниченной глубины. Вы можете добавлять неограниченное количество вкладок внутрь вкладок.
 
-##PWS Tabs адаптивный!
+## PWS Tabs адаптивный!
 ![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600.jpg) ![Preview](http://alexchizhov.com/pwstabs/screenshots/pwstabsresponsive600menu.jpg)
 
 ## Установка с Bower
