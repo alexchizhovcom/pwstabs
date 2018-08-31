@@ -112,7 +112,7 @@ jQuery(function($){
 ```
 
 
-<p>5) PWS Tabs Plugin supports <strong><a href="http://fortawesome.github.io/" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.5.0</a></strong></p>
+<p>5) PWS Tabs Plugin supports <strong><a href="https://github.com/FortAwesome/Font-Awesome" title="Go to Font Awesome Website" target="_blank">Font Awesome 4.5.0</a></strong></p>
 
 <p>5.1) Include Font Awesome stylesheet from assets directory:</p>
 
